@@ -25,24 +25,28 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="flex-1 flex flex-col justify-center items-center px-8 text-center max-w-2xl mx-auto">
-        <h1 className="text-6xl font-bold leading-tight mb-6">
-          You're diving in.
-        </h1>
+      <section className="flex-1 flex flex-col justify-center items-center px-8 py-32">
+        <div className="text-center max-w-2xl">
+          <h1 className="text-6xl font-bold leading-tight mb-6">
+            You're diving in.
+          </h1>
 
-        <p className="text-lg text-body mb-12">
-          I'm an Entrepreneur & Innovation Analyst building autonomous systems
-          for customer acquisition and market analysis.
-        </p>
+          <p className="text-lg text-body mb-12 mx-auto">
+            I'm an Entrepreneur & Innovation Analyst building autonomous systems
+            for customer acquisition and market analysis.
+          </p>
 
-        <a
-          href="https://calendly.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
-        >
-          Book a Free Call
-        </a>
+          <div className="flex justify-center">
+            <a
+              href="https://calendly.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
+            >
+              Book a Free Call
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
