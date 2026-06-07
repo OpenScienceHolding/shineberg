@@ -69,8 +69,8 @@ export default function Home() {
       </div>
 
       {/* Intro Section */}
-      <section className="px-8 py-24 max-w-4xl mx-auto">
-        <p className="text-xl text-body mb-12 max-w-2xl leading-relaxed">
+      <section className="px-8 py-24 max-w-4xl mx-auto text-center">
+        <p className="text-xl text-body mb-12 max-w-2xl mx-auto leading-relaxed">
           Over the past decade, I've worked with founders, teams, and executives
           navigating uncertainty. I combine strategic analysis with hands-on
           building to help you see the full picture and move forward with
@@ -79,37 +79,28 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="px-8 py-24 max-w-4xl mx-auto">
+      <section className="px-8 py-24 max-w-4xl mx-auto text-center">
         <p className="text-xs uppercase tracking-widest text-muted mb-16">
           How I Work
         </p>
 
-        <div className="space-y-16 mb-12">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-1">
-              <p className="text-sm text-muted">01</p>
-            </div>
-            <div className="col-span-11">
-              <h2 className="text-3xl font-bold mb-3">Project Partnership</h2>
-              <p className="text-lg text-body leading-relaxed">
-                From strategy through execution. I work alongside you to
-                navigate uncertainty, identify opportunities, and build what
-                matters.
-              </p>
-            </div>
+        <div className="space-y-16 mb-12 max-w-2xl mx-auto">
+          <div>
+            <p className="text-sm text-muted mb-3">01</p>
+            <h2 className="text-3xl font-bold mb-3">Project Partnership</h2>
+            <p className="text-lg text-body leading-relaxed">
+              From strategy through execution. I work alongside you to navigate
+              uncertainty, identify opportunities, and build what matters.
+            </p>
           </div>
 
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-1">
-              <p className="text-sm text-muted">02</p>
-            </div>
-            <div className="col-span-11">
-              <h2 className="text-3xl font-bold mb-3">Consulting & Analysis</h2>
-              <p className="text-lg text-body leading-relaxed">
-                Specific questions deserve deep dives. Market strategy, agent
-                systems, competitive intelligence, or navigating the unknown.
-              </p>
-            </div>
+          <div>
+            <p className="text-sm text-muted mb-3">02</p>
+            <h2 className="text-3xl font-bold mb-3">Consulting & Analysis</h2>
+            <p className="text-lg text-body leading-relaxed">
+              Specific questions deserve deep dives. Market strategy, agent
+              systems, competitive intelligence, or navigating the unknown.
+            </p>
           </div>
         </div>
 
@@ -127,35 +118,35 @@ export default function Home() {
       </div>
 
       {/* Projects Preview */}
-      <section className="px-8 py-24 max-w-4xl mx-auto">
+      <section className="px-8 py-24 max-w-4xl mx-auto text-center">
         <p className="text-xs uppercase tracking-widest text-muted mb-16">
           What I'm Building
         </p>
 
-        <div className="space-y-8 mb-12">
+        <div className="space-y-8 mb-12 max-w-2xl mx-auto">
           <div className="pb-8 border-b border-line">
-            <div className="flex gap-4 mb-3">
+            <div className="flex flex-col items-center gap-4 mb-3">
               <span className="text-3xl">🤖</span>
-              <div className="flex-1">
+              <div>
                 <h3 className="text-2xl font-bold">Agentic Agency</h3>
                 <p className="text-sm text-muted mt-1">Active</p>
               </div>
             </div>
-            <p className="text-lg text-body ml-14">
+            <p className="text-lg text-body">
               Building autonomous systems that acquire customers through
               LinkedIn, WhatsApp, and partnerships.
             </p>
           </div>
 
           <div className="pb-8 border-b border-line">
-            <div className="flex gap-4 mb-3">
+            <div className="flex flex-col items-center gap-4 mb-3">
               <span className="text-3xl">🎙️</span>
-              <div className="flex-1">
+              <div>
                 <h3 className="text-2xl font-bold">The-Last-Founder Podcast</h3>
                 <p className="text-sm text-muted mt-1">Recording</p>
               </div>
             </div>
-            <p className="text-lg text-body ml-14">
+            <p className="text-lg text-body">
               Live experiments in building. Three founders build a startup in
               real-time on camera, no script, no editing.
             </p>
