@@ -26,17 +26,26 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex-1 flex flex-col justify-center items-center px-8 py-32">
-        <div className="text-center max-w-2xl">
-          <h1 className="text-6xl font-bold leading-tight mb-6">
-            You're diving in.
-          </h1>
-
-          <p className="text-lg text-body mb-12 mx-auto">
-            I'm an Entrepreneur & Innovation Analyst building autonomous systems
-            for customer acquisition and market analysis.
+        <div className="text-center max-w-3xl">
+          {/* Label */}
+          <p className="text-sm uppercase tracking-widest text-muted mb-12">
+            Design System
           </p>
 
-          <div className="flex justify-center">
+          {/* Main Heading */}
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+            The system <br />
+            <span className="italic font-normal">behind the dive.</span>
+          </h1>
+
+          {/* Description */}
+          <p className="text-lg text-body mb-16 max-w-2xl mx-auto leading-relaxed">
+            Every color, type ramp and spacing step extracted straight from the
+            live site — codified into tokens you can build on.
+          </p>
+
+          {/* CTA Button */}
+          <div className="flex justify-center gap-4">
             <a
               href="https://calendly.com"
               target="_blank"
@@ -45,6 +54,17 @@ export default function Home() {
             >
               Book a Free Call
             </a>
+          </div>
+
+          {/* Design Details */}
+          <div className="mt-24 pt-12 border-t border-line">
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-muted">
+              <div>Entrepreneur & Innovation Analyst — Home</div>
+              <div>—</div>
+              <div>Warm paper / Light</div>
+              <div>—</div>
+              <div>7 color • 9 type • 8 space</div>
+            </div>
           </div>
         </div>
       </section>
