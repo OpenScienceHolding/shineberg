@@ -28,18 +28,18 @@ export default function Home() {
       <section className="flex-1 flex flex-col justify-center items-center px-8 py-32">
         <div className="text-center max-w-3xl">
           {/* Label */}
-          <p className="text-sm uppercase tracking-widest text-muted mb-12">
+          <p className="text-base uppercase tracking-widest text-muted mb-16">
             Design System
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+          <h1 className="text-8xl md:text-9xl font-bold leading-tight mb-8">
             The system <br />
             <span className="italic font-normal">behind the dive.</span>
           </h1>
 
           {/* Description */}
-          <p className="text-lg text-body mb-16 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-2xl text-body mb-16 max-w-2xl mx-auto leading-relaxed">
             Every color, type ramp and spacing step extracted straight from the
             live site — codified into tokens you can build on.
           </p>
