@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sharon Shineberg | Entrepreneur & Innovation Analyst",
+  title: "Sharon Shineberg | Innovation Strategist",
   description:
-    "Building autonomous systems for growth through AI-powered consulting.",
+    "I help companies navigate complexity and build tomorrow's solutions using AI and strategic thinking.",
+  keywords:
+    "Innovation, Strategy, AI, Startups, Entrepreneurship, Agentic Systems",
+  authors: [{ name: "Sharon Shineberg" }],
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
@@ -14,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-white text-black antialiased">{children}</body>
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="theme-color" content="#F5F0E8" />
+      </head>
+      <body className="bg-paper text-ink antialiased font-sans">
+        {children}
+      </body>
     </html>
   );
 }

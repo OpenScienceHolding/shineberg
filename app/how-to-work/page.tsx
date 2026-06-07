@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 export default function HowToWork() {
   return (
@@ -197,6 +198,8 @@ export default function HowToWork() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

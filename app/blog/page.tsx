@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 export default function Blog() {
   const posts = [
@@ -80,6 +81,8 @@ export default function Blog() {
           ))}
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
