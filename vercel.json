@@ -1,0 +1,7 @@
+{
+  "name": "Sharon Shineberg",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "nodeVersion": "20.x"
+}
