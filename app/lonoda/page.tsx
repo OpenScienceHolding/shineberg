@@ -8,6 +8,7 @@ export default function Lonoda() {
       description:
         "Building autonomous systems that acquire customers through LinkedIn, WhatsApp, and partnerships.",
       status: "Active",
+      link: "#",
     },
     {
       emoji: "🎙️",
@@ -15,20 +16,23 @@ export default function Lonoda() {
       description:
         "Live experiments in building. Three founders build a startup in real-time on camera, no script, no editing.",
       status: "Recording",
+      link: "https://www.youtube.com/watch?v=Wygd-02oPSE&list=PLGhvOamix6K6b07eMUN3Ln0x2Ra8Nr5B2",
+    },
+    {
+      emoji: "🧠",
+      title: "lezel",
+      description:
+        "AI company exploring consciousness, intelligence, and the future of human-AI collaboration.",
+      status: "Active",
+      link: "https://lezel.co",
     },
     {
       emoji: "🎓",
       title: "unschool.live",
       description:
-        "Personalized education through technology and community for self-directed learners.",
-      status: "Planning",
-    },
-    {
-      emoji: "🧠",
-      title: "Workshop: Second Brain for Hyperactive Founders",
-      description:
-        "A system for managing chaos, building accountability, and creating structure in uncertain work.",
-      status: "Completed",
+        "Personalized education through AI technology, empowering self-directed learners to build their own learning path.",
+      status: "Building",
+      link: "#",
     },
   ];
 
@@ -54,35 +58,80 @@ export default function Lonoda() {
         </div>
       </nav>
 
-      <section className="px-8 py-24 max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-8">lonoda</h1>
-        <p className="text-xl text-body mb-16">
-          Places where you dive into the unknown. Projects where outcomes are
-          uncertain, problems are real, and learning happens in public.
-        </p>
+      <section className="px-8 py-24 flex justify-center">
+        <div className="max-w-2xl">
+          <h1 className="text-6xl font-bold mb-6 text-center">lonoda</h1>
+          <p className="text-xl text-body mb-16 text-center leading-relaxed">
+            Places where you dive into the unknown. Projects where outcomes are
+            uncertain, problems are real, and learning happens in public.
+          </p>
 
-        <div className="space-y-8">
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="pb-8 border-b border-line last:border-b-0"
-            >
-              <div className="flex gap-4 mb-3">
-                <span className="text-3xl">{project.emoji}</span>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold">{project.title}</h3>
-                  <p className="text-sm text-muted mt-1">{project.status}</p>
+          <div className="space-y-8">
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                className="pb-8 border-b border-line last:border-b-0"
+              >
+                <div className="flex flex-col items-center gap-4 mb-4">
+                  <span className="text-4xl">{project.emoji}</span>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold">{project.title}</h3>
+                    <p className="text-sm text-muted mt-1">{project.status}</p>
+                  </div>
+                </div>
+                <p className="text-lg text-body text-center mb-4">
+                  {project.description}
+                </p>
+                <div className="text-center">
+                  <a
+                    href={project.link}
+                    target={
+                      project.link.startsWith("http") ? "_blank" : undefined
+                    }
+                    rel={
+                      project.link.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="text-ink font-medium hover:opacity-60"
+                  >
+                    Visit →
+                  </a>
                 </div>
               </div>
-              <p className="text-lg text-body ml-14">{project.description}</p>
-              <Link
-                href={`/lonoda/${project.title.toLowerCase().replace(/\s+/g, "-")}`}
-                className="text-sm text-ink underline hover:opacity-60 ml-14 mt-3 inline-block"
+            ))}
+          </div>
+
+          {/* Social Links */}
+          <div className="mt-20 pt-8 border-t border-line">
+            <h2 className="text-2xl font-bold mb-8 text-center">
+              Stay Connected
+            </h2>
+            <div className="flex justify-center gap-8">
+              <a
+                href="https://www.linkedin.com/in/sharonshineberg/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink font-medium hover:opacity-60"
               >
-                Read more →
-              </Link>
+                LinkedIn
+              </a>
+              <a
+                href="https://www.facebook.com/shinebergsharon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink font-medium hover:opacity-60"
+              >
+                Facebook
+              </a>
+              <a
+                href="mailto:sharon@shineberg.com"
+                className="text-ink font-medium hover:opacity-60"
+              >
+                Email
+              </a>
             </div>
-          ))}
+          </div>
         </div>
       </section>
     </div>
