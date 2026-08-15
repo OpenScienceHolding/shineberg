@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank you · We Love Luka</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      :root {
+        --paper: #ece6d8;
+        --ink: #26221d;
+        --muted: #6e6656;
+        --accent: #ac8543;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --paper: #1a1712;
+          --ink: #ece5d5;
+          --muted: #9a9081;
+          --accent: #d2a857;
+        }
+      }
+      :root[data-theme="dark"] {
+        --paper: #1a1712;
+        --ink: #ece5d5;
+        --muted: #9a9081;
+        --accent: #d2a857;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+        line-height: 1.7;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
+      }
+      .serif {
+        font-family:
+          "Hoefler Text", "Iowan Old Style", Palatino, "Palatino Linotype",
+          Georgia, serif;
+      }
+      .box {
+        max-width: 460px;
+      }
+      .flame {
+        width: 24px;
+        height: 36px;
+        margin: 0 auto 28px;
+      }
+      h1 {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin: 0 0 18px;
+      }
+      p {
+        font-size: 1.15rem;
+        margin: 0 0 14px;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 1rem;
+      }
+      a.back {
+        display: inline-block;
+        margin-top: 26px;
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="flame">
+        <svg viewBox="0 0 26 40" aria-hidden="true">
+          <path
+            d="M13 2 C7 10 5 13 5 19 a8 8 0 0 0 16 0 C21 13 19 10 13 2 Z"
+            fill="var(--accent)"
+          />
+        </svg>
+      </div>
+      <h1 class="serif">Thank you.</h1>
+      <p>What you shared is now part of what Noah will one day open.</p>
+      <p class="muted">
+        It means more than you know. If you have more — a photo, his voice, a
+        story you forgot — you can always come back and add it.
+      </p>
+      <a class="back" href="/weloveluka/">Back to Luka's page</a>
+    </div>
+  </body>
+</html>

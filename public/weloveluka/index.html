@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>We Love Luka</title>
+    <meta
+      name="description"
+      content="A place we are building for Noah — so that one day he can know his father, Luka. Share a memory, a photo, or his voice."
+    />
+    <meta name="robots" content="noindex" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shineberg.com/weloveluka/" />
+    <meta property="og:title" content="We Love Luka" />
+    <meta
+      property="og:description"
+      content="For Noah — so you will know your father. Share a memory of Luka."
+    />
+    <meta
+      property="og:image"
+      content="https://shineberg.com/weloveluka/luka.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="We Love Luka" />
+    <meta
+      name="twitter:description"
+      content="For Noah — so you will know your father. Share a memory of Luka."
+    />
+    <meta
+      name="twitter:image"
+      content="https://shineberg.com/weloveluka/luka.jpg"
+    />
+    <style>
+      :root {
+        --paper: #ece6d8;
+        --ink: #26221d;
+        --muted: #6e6656;
+        --line: #d7cebc;
+        --accent: #ac8543;
+        --navy: #2a3b57;
+        --blue: #4c6685;
+        --card: #f3eee2;
+        --maxw: 620px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --paper: #1a1712;
+          --ink: #ece5d5;
+          --muted: #9a9081;
+          --line: #322d25;
+          --accent: #d2a857;
+          --navy: #3c4e6b;
+          --blue: #6e88a6;
+          --card: #221e18;
+        }
+      }
+      :root[data-theme="dark"] {
+        --paper: #1a1712;
+        --ink: #ece5d5;
+        --muted: #9a9081;
+        --line: #322d25;
+        --accent: #d2a857;
+        --navy: #3c4e6b;
+        --blue: #6e88a6;
+        --card: #221e18;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+        line-height: 1.75;
+        font-size: 18px;
+        -webkit-font-smoothing: antialiased;
+      }
+      .serif {
+        font-family:
+          "Hoefler Text", "Iowan Old Style", Palatino, "Palatino Linotype",
+          Georgia, serif;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ---- hero ---- */
+      header {
+        padding: 12vh 0 9vh;
+        text-align: center;
+      }
+      .portrait {
+        width: 172px;
+        height: 172px;
+        margin: 0 auto 34px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        box-shadow: 0 10px 34px rgba(0, 0, 0, 0.16);
+        background: var(--card);
+        position: relative;
+      }
+      .portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 24%;
+        display: block;
+      }
+      .portrait .ph {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        padding: 16px;
+      }
+
+      h1.name {
+        font-size: clamp(3.2rem, 12vw, 5.4rem);
+        font-weight: 500;
+        line-height: 0.98;
+        letter-spacing: 0.01em;
+        margin: 0;
+        text-wrap: balance;
+      }
+      .name-sub {
+        font-size: 0.95rem;
+        color: var(--muted);
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+        margin-top: 20px;
+      }
+
+      /* hat-band rule — echoes Luka's Panama hat: navy · camel · navy */
+      .band {
+        width: 62px;
+        margin: 26px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .band i {
+        display: block;
+        height: 2px;
+        background: var(--navy);
+      }
+      .band i.mid {
+        height: 4px;
+        background: var(--accent);
+      }
+
+      .dates {
+        color: var(--muted);
+        font-size: 0.95rem;
+        letter-spacing: 0.05em;
+      }
+      .forwhom {
+        margin-top: 34px;
+        font-size: 1.32rem;
+        line-height: 1.55;
+        color: var(--ink);
+        text-wrap: balance;
+      }
+      .forwhom .em {
+        font-style: italic;
+      }
+
+      /* ---- sections ---- */
+      section {
+        padding: 7vh 0;
+        border-top: 1px solid var(--line);
+      }
+      .eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 20px;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 1.7rem;
+        font-weight: 500;
+        margin: 0 0 18px;
+        line-height: 1.2;
+        text-wrap: balance;
+      }
+      p {
+        margin: 0 0 18px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      .lead {
+        font-size: 1.18rem;
+      }
+      .muted {
+        color: var(--muted);
+      }
+
+      /* ---- the ask ---- */
+      .ask-list {
+        list-style: none;
+        padding: 0;
+        margin: 6px 0 30px;
+      }
+      .ask-list li {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        gap: 14px;
+        align-items: baseline;
+      }
+      .ask-list li:first-child {
+        border-top: 1px solid var(--line);
+      }
+      .ask-list .k {
+        color: var(--accent);
+        font-weight: 600;
+        min-width: 1.2em;
+        text-align: center;
+      }
+
+      .cta {
+        display: inline-block;
+        background: var(--ink);
+        color: var(--paper);
+        text-decoration: none;
+        padding: 16px 34px;
+        border-radius: 2px;
+        font-size: 1.02rem;
+        letter-spacing: 0.02em;
+        transition: opacity 0.2s;
+      }
+      .cta:hover {
+        opacity: 0.85;
+      }
+      .cta:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      .cta-note {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 16px;
+      }
+
+      /* ---- share form ---- */
+      .mform {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        margin-top: 10px;
+      }
+      .mform label {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.95rem;
+        color: var(--ink);
+      }
+      .mform .opt {
+        color: var(--muted);
+        font-weight: 400;
+        font-size: 0.85rem;
+      }
+      .mform input[type="text"],
+      .mform input[type="email"],
+      .mform textarea {
+        font: inherit;
+        font-size: 1rem;
+        color: var(--ink);
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        padding: 12px 14px;
+        width: 100%;
+      }
+      .mform textarea {
+        resize: vertical;
+        line-height: 1.6;
+      }
+      .mform input:focus,
+      .mform textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+      .mform input[type="file"] {
+        font: inherit;
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+      .mform .hint {
+        font-size: 0.82rem;
+        color: var(--muted);
+        font-weight: 400;
+      }
+      .mform button.cta {
+        align-self: flex-start;
+        border: none;
+        cursor: pointer;
+        margin-top: 6px;
+      }
+
+      /* ---- archive placeholder ---- */
+      .archive {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        padding: 40px 30px;
+        text-align: center;
+      }
+      .archive .icons {
+        font-size: 0.78rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 14px;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 6vh 0 9vh;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+      }
+      .flame {
+        width: 18px;
+        height: 28px;
+        margin: 0 auto 16px;
+      }
+      .flame .fire {
+        transform-origin: center bottom;
+        animation: flick 3.6s ease-in-out infinite;
+      }
+      @keyframes flick {
+        0%,
+        100% {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+        45% {
+          transform: scale(0.94, 1.06) translateY(-1px);
+          opacity: 0.9;
+        }
+        70% {
+          transform: scale(1.04, 0.97);
+          opacity: 1;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .flame .fire {
+          animation: none;
+        }
+      }
+
+      .draftbar {
+        background: var(--card);
+        color: var(--muted);
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        letter-spacing: 0.02em;
+        border-bottom: 1px solid var(--line);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="portrait">
+          <img
+            src="luka.jpg"
+            alt="Luka"
+            onerror="
+              this.style.display = 'none';
+              this.nextElementSibling.style.display = 'flex';
+            "
+          />
+          <div class="ph" style="display: none">Luka</div>
+        </div>
+        <h1 class="name serif">Luka</h1>
+        <div class="name-sub">Luka Skorochod</div>
+        <div class="band" aria-hidden="true">
+          <i></i><i class="mid"></i><i></i>
+        </div>
+        <div class="dates">Father to Noah · 12 August 2026</div>
+        <p class="forwhom serif">
+          For Noah — <span class="em">so you will know your father.</span>
+        </p>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <section>
+        <p class="eyebrow">What this place is</p>
+        <p class="lead">
+          Luka was my closest friend. A pure soul, with big dreams for his son.
+        </p>
+        <p>
+          Noah was born only months ago, and he won't remember him. So we're
+          building him one place — where his father's voice, his face, and the
+          stories of everyone who loved him will be waiting. So that one day,
+          when he's ready, he can come here and meet his dad.
+        </p>
+        <p class="muted">
+          It's being built now, together. It will keep growing as long as there
+          is more to add.
+        </p>
+      </section>
+
+      <section>
+        <p class="eyebrow">How you can help</p>
+        <h2>If you knew Luka, you hold a piece of him.</h2>
+        <p>
+          What matters most isn't what's written — it's his voice and his face.
+          Send anything with Luka in it:
+        </p>
+        <ul class="ask-list">
+          <li>
+            <span class="k">·</span
+            ><span
+              ><strong>Voice notes &amp; videos</strong> — any moment with his
+              voice in it. This is what disappears fastest, and what Noah will
+              want most.</span
+            >
+          </li>
+          <li>
+            <span class="k">·</span
+            ><span
+              ><strong>Photos</strong> — from any time, even the most ordinary
+              ones.</span
+            >
+          </li>
+          <li>
+            <span class="k">·</span
+            ><span
+              ><strong>A memory or a story</strong> — a joke of his, a saying, a
+              moment. The smallest and most personal is the most precious.</span
+            >
+          </li>
+          <li>
+            <span class="k">★</span
+            ><span
+              >And if Luka ever spoke to you about <strong>Noah</strong>, about
+              becoming a father — that is what I most want Noah to hear.</span
+            >
+          </li>
+        </ul>
+        <a class="cta" href="#share">Share a memory</a>
+      </section>
+
+      <section id="share">
+        <p class="eyebrow">Leave something for Noah</p>
+        <h2>Share a memory of Luka.</h2>
+        <p class="muted">
+          It comes straight to me, privately. Nothing is published without
+          approval.
+        </p>
+        <form
+          class="mform"
+          action="https://formsubmit.co/sharon@shineberg.com"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="A memory of Luka — weloveluka"
+          />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://shineberg.com/weloveluka/thanks.html"
+          />
+          <input
+            type="text"
+            name="_honey"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
+          <label
+            >Your name
+            <input type="text" name="Name" required />
+          </label>
+          <label
+            >Your email <span class="opt">optional</span>
+            <input type="email" name="Email" />
+          </label>
+          <label
+            >How did you know Luka? <span class="opt">optional</span>
+            <input type="text" name="How you knew Luka" />
+          </label>
+          <label
+            >Your memory of Luka
+            <textarea name="Memory" rows="5" required></textarea>
+            <span class="hint"
+              >A story, a moment, a joke of his — what he was like. The
+              smallest, most personal detail is the most precious.</span
+            >
+          </label>
+          <label
+            >Did Luka ever talk to you about Noah, or about becoming a father?
+            <span class="opt">optional</span>
+            <textarea name="About Noah" rows="3"></textarea>
+            <span class="hint">This is what Noah will most want to hear.</span>
+          </label>
+          <label
+            >Photos or voice notes <span class="opt">optional</span>
+            <input
+              type="file"
+              name="attachment"
+              accept="image/*,audio/*,video/*"
+              multiple
+            />
+            <span class="hint"
+              >Anything with his voice or his face. For large videos, you can
+              also send them to me directly.</span
+            >
+          </label>
+          <button type="submit" class="cta">Share this with Noah</button>
+        </form>
+      </section>
+
+      <section>
+        <p class="eyebrow">What will gather here</p>
+        <div class="archive">
+          <div class="icons">Voices · Faces · Stories</div>
+          <p class="muted" style="margin: 0">
+            This is where Luka's voice, photos, and stories will gather — for
+            Noah, for the day he's ready.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <div class="flame">
+          <svg viewBox="0 0 26 40" aria-hidden="true">
+            <path
+              class="fire"
+              d="M13 2 C7 10 5 13 5 19 a8 8 0 0 0 16 0 C21 13 19 10 13 2 Z"
+              fill="var(--accent)"
+            />
+          </svg>
+        </div>
+        We Love Luka · In memory of Luka Skorochod
+      </div>
+    </footer>
+  </body>
+</html>
