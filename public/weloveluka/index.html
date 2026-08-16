@@ -38,7 +38,6 @@
         --line: #d7cebc;
         --accent: #ac8543;
         --navy: #2a3b57;
-        --blue: #4c6685;
         --card: #f3eee2;
         --maxw: 620px;
       }
@@ -50,7 +49,6 @@
           --line: #322d25;
           --accent: #d2a857;
           --navy: #3c4e6b;
-          --blue: #6e88a6;
           --card: #221e18;
         }
       }
@@ -61,7 +59,6 @@
         --line: #322d25;
         --accent: #d2a857;
         --navy: #3c4e6b;
-        --blue: #6e88a6;
         --card: #221e18;
       }
 
@@ -93,6 +90,38 @@
         padding: 0 24px;
       }
 
+      /* ---- language bar ---- */
+      .langbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 2px;
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+      .langbar button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.82rem;
+        color: var(--muted);
+        padding: 4px 10px;
+        border-radius: 2px;
+        transition: color 0.15s;
+      }
+      .langbar button:hover {
+        color: var(--ink);
+      }
+      .langbar button[aria-current="true"] {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .langbar button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
       /* ---- hero ---- */
       header {
         padding: 12vh 0 9vh;
@@ -122,12 +151,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        text-align: center;
         color: var(--muted);
         font-size: 0.72rem;
         letter-spacing: 0.16em;
         text-transform: uppercase;
-        padding: 16px;
       }
 
       h1.name {
@@ -146,13 +173,12 @@
         margin-top: 20px;
       }
 
-      /* hat-band rule — echoes Luka's Panama hat: navy · camel · navy */
+      /* hat-band rule — echoes Luka's Panama hat */
       .band {
         width: 62px;
         margin: 26px auto;
         display: flex;
         flex-direction: column;
-        gap: 0;
       }
       .band i {
         display: block;
@@ -175,9 +201,6 @@
         line-height: 1.55;
         color: var(--ink);
         text-wrap: balance;
-      }
-      .forwhom .em {
-        font-style: italic;
       }
 
       /* ---- sections ---- */
@@ -253,11 +276,6 @@
       .cta:focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: 3px;
-      }
-      .cta-note {
-        font-size: 0.85rem;
-        color: var(--muted);
-        margin-top: 16px;
       }
 
       /* ---- share form ---- */
@@ -371,18 +389,27 @@
         }
       }
 
-      .draftbar {
-        background: var(--card);
-        color: var(--muted);
+      /* ---- RTL (Hebrew) ---- */
+      [dir="rtl"] .ask-list .k {
         text-align: center;
-        font-size: 0.8rem;
-        padding: 8px 16px;
-        letter-spacing: 0.02em;
-        border-bottom: 1px solid var(--line);
+      }
+      [dir="rtl"] .mform button.cta {
+        align-self: flex-end;
+      }
+      [dir="rtl"] .name-sub {
+        letter-spacing: 0.1em;
       }
     </style>
   </head>
   <body>
+    <nav class="langbar" aria-label="Language">
+      <button type="button" data-lang="en">English</button>
+      <button type="button" data-lang="he" lang="he">עברית</button>
+      <button type="button" data-lang="ru" lang="ru">Русский</button>
+      <button type="button" data-lang="fr" lang="fr">Français</button>
+      <button type="button" data-lang="nl" lang="nl">Nederlands</button>
+    </nav>
+
     <header>
       <div class="wrap">
         <div class="portrait">
@@ -401,78 +428,80 @@
         <div class="band" aria-hidden="true">
           <i></i><i class="mid"></i><i></i>
         </div>
-        <div class="dates">Father to Noah · 12 August 2026</div>
-        <p class="forwhom serif">
-          For Noah — <span class="em">so you will know your father.</span>
+        <div class="dates" data-i18n="father_line">
+          Father to Noah · 12 August 2026
+        </div>
+        <p class="forwhom serif" data-i18n="forwhom">
+          For Noah — <em>so you will know your father.</em>
         </p>
       </div>
     </header>
 
     <div class="wrap">
       <section>
-        <p class="eyebrow">What this place is</p>
-        <p class="lead">
+        <p class="eyebrow" data-i18n="s1_eyebrow">What this place is</p>
+        <p class="lead" data-i18n="s1_lead">
           Luka was my closest friend. A pure soul, with big dreams for his son.
         </p>
-        <p>
+        <p data-i18n="s1_p">
           Noah was born only months ago, and he won't remember him. So we're
           building him one place — where his father's voice, his face, and the
           stories of everyone who loved him will be waiting. So that one day,
           when he's ready, he can come here and meet his dad.
         </p>
-        <p class="muted">
+        <p class="muted" data-i18n="s1_muted">
           It's being built now, together. It will keep growing as long as there
           is more to add.
         </p>
       </section>
 
       <section>
-        <p class="eyebrow">How you can help</p>
-        <h2>If you knew Luka, you hold a piece of him.</h2>
-        <p>
+        <p class="eyebrow" data-i18n="s2_eyebrow">How you can help</p>
+        <h2 data-i18n="s2_h2">If you knew Luka, you hold a piece of him.</h2>
+        <p data-i18n="s2_p">
           What matters most isn't what's written — it's his voice and his face.
           Send anything with Luka in it:
         </p>
         <ul class="ask-list">
           <li>
-            <span class="k">·</span
-            ><span
+            <span class="k">·</span>
+            <span data-i18n="s2_li1"
               ><strong>Voice notes &amp; videos</strong> — any moment with his
               voice in it. This is what disappears fastest, and what Noah will
               want most.</span
             >
           </li>
           <li>
-            <span class="k">·</span
-            ><span
+            <span class="k">·</span>
+            <span data-i18n="s2_li2"
               ><strong>Photos</strong> — from any time, even the most ordinary
               ones.</span
             >
           </li>
           <li>
-            <span class="k">·</span
-            ><span
+            <span class="k">·</span>
+            <span data-i18n="s2_li3"
               ><strong>A memory or a story</strong> — a joke of his, a saying, a
               moment. The smallest and most personal is the most precious.</span
             >
           </li>
           <li>
-            <span class="k">★</span
-            ><span
+            <span class="k">★</span>
+            <span data-i18n="s2_li4"
               >And if Luka ever spoke to you about <strong>Noah</strong>, about
               becoming a father — that is what I most want Noah to hear.</span
             >
           </li>
         </ul>
-        <a class="cta" href="#share">Share a memory</a>
+        <a class="cta" href="#share" data-i18n="cta_share">Share a memory</a>
       </section>
 
       <section id="share">
-        <p class="eyebrow">Leave something for Noah</p>
-        <h2>Share a memory of Luka.</h2>
-        <p class="muted">
-          It comes straight to me, privately. Nothing is published without
-          approval.
+        <p class="eyebrow" data-i18n="s3_eyebrow">Leave something for Noah</p>
+        <h2 data-i18n="s3_h2">Share a memory of Luka.</h2>
+        <p class="muted" data-i18n="s3_privacy">
+          It comes straight to me — Sharon, Luka's closest friend. Nothing is
+          published without approval.
         </p>
         <form
           class="mform"
@@ -500,54 +529,64 @@
             autocomplete="off"
           />
 
-          <label
-            >Your name
+          <label>
+            <span data-i18n="f_name">Your name</span>
             <input type="text" name="Name" required />
           </label>
-          <label
-            >Your email <span class="opt">optional</span>
+          <label>
+            <span data-i18n="f_email">Your email</span>
+            <span class="opt" data-i18n="opt">optional</span>
             <input type="email" name="Email" />
           </label>
-          <label
-            >How did you know Luka? <span class="opt">optional</span>
+          <label>
+            <span data-i18n="f_how">How did you know Luka?</span>
+            <span class="opt" data-i18n="opt">optional</span>
             <input type="text" name="How you knew Luka" />
           </label>
-          <label
-            >Your memory of Luka
+          <label>
+            <span data-i18n="f_memory">Your memory of Luka</span>
             <textarea name="Memory" rows="5" required></textarea>
-            <span class="hint"
+            <span class="hint" data-i18n="hint_memory"
               >A story, a moment, a joke of his — what he was like. The
               smallest, most personal detail is the most precious.</span
             >
           </label>
-          <label
-            >Did Luka ever talk to you about Noah, or about becoming a father?
-            <span class="opt">optional</span>
+          <label>
+            <span data-i18n="f_noah"
+              >Did Luka ever talk to you about Noah, or about becoming a
+              father?</span
+            >
+            <span class="opt" data-i18n="opt">optional</span>
             <textarea name="About Noah" rows="3"></textarea>
-            <span class="hint">This is what Noah will most want to hear.</span>
+            <span class="hint" data-i18n="hint_noah"
+              >This is what Noah will most want to hear.</span
+            >
           </label>
-          <label
-            >Photos or voice notes <span class="opt">optional</span>
+          <label>
+            <span data-i18n="f_files">Photos or voice notes</span>
+            <span class="opt" data-i18n="opt">optional</span>
             <input
               type="file"
               name="attachment"
               accept="image/*,audio/*,video/*"
               multiple
             />
-            <span class="hint"
+            <span class="hint" data-i18n="hint_files"
               >Anything with his voice or his face. For large videos, you can
               also send them to me directly.</span
             >
           </label>
-          <button type="submit" class="cta">Share this with Noah</button>
+          <button type="submit" class="cta" data-i18n="btn">
+            Share this with Noah
+          </button>
         </form>
       </section>
 
       <section>
-        <p class="eyebrow">What will gather here</p>
+        <p class="eyebrow" data-i18n="s4_eyebrow">What will gather here</p>
         <div class="archive">
-          <div class="icons">Voices · Faces · Stories</div>
-          <p class="muted" style="margin: 0">
+          <div class="icons" data-i18n="s4_icons">Voices · Faces · Stories</div>
+          <p class="muted" style="margin: 0" data-i18n="s4_text">
             This is where Luka's voice, photos, and stories will gather — for
             Noah, for the day he's ready.
           </p>
@@ -566,8 +605,272 @@
             />
           </svg>
         </div>
-        We Love Luka · In memory of Luka Skorochod
+        <span data-i18n="footer"
+          >We Love Luka · In memory of Luka Skorochod</span
+        >
       </div>
     </footer>
+
+    <script>
+      const T = {
+        en: {
+          father_line: "Father to Noah · 12 August 2026",
+          forwhom: "For Noah — <em>so you will know your father.</em>",
+          s1_eyebrow: "What this place is",
+          s1_lead:
+            "Luka was my closest friend. A pure soul, with big dreams for his son.",
+          s1_p: "Noah was born only months ago, and he won't remember him. So we're building him one place — where his father's voice, his face, and the stories of everyone who loved him will be waiting. So that one day, when he's ready, he can come here and meet his dad.",
+          s1_muted:
+            "It's being built now, together. It will keep growing as long as there is more to add.",
+          s2_eyebrow: "How you can help",
+          s2_h2: "If you knew Luka, you hold a piece of him.",
+          s2_p: "What matters most isn't what's written — it's his voice and his face. Send anything with Luka in it:",
+          s2_li1:
+            "<strong>Voice notes &amp; videos</strong> — any moment with his voice in it. This is what disappears fastest, and what Noah will want most.",
+          s2_li2:
+            "<strong>Photos</strong> — from any time, even the most ordinary ones.",
+          s2_li3:
+            "<strong>A memory or a story</strong> — a joke of his, a saying, a moment. The smallest and most personal is the most precious.",
+          s2_li4:
+            "And if Luka ever spoke to you about <strong>Noah</strong>, about becoming a father — that is what I most want Noah to hear.",
+          cta_share: "Share a memory",
+          s3_eyebrow: "Leave something for Noah",
+          s3_h2: "Share a memory of Luka.",
+          s3_privacy:
+            "It comes straight to me — Sharon, Luka's closest friend. Nothing is published without approval.",
+          f_name: "Your name",
+          f_email: "Your email",
+          f_how: "How did you know Luka?",
+          f_memory: "Your memory of Luka",
+          f_noah:
+            "Did Luka ever talk to you about Noah, or about becoming a father?",
+          f_files: "Photos or voice notes",
+          opt: "optional",
+          hint_memory:
+            "A story, a moment, a joke of his — what he was like. The smallest, most personal detail is the most precious.",
+          hint_noah: "This is what Noah will most want to hear.",
+          hint_files:
+            "Anything with his voice or his face. For large videos, you can also send them to me directly.",
+          btn: "Share this with Noah",
+          s4_eyebrow: "What will gather here",
+          s4_icons: "Voices · Faces · Stories",
+          s4_text:
+            "This is where Luka's voice, photos, and stories will gather — for Noah, for the day he's ready.",
+          footer: "We Love Luka · In memory of Luka Skorochod",
+        },
+        he: {
+          father_line: "אבא של נוח · 12 באוגוסט 2026",
+          forwhom: "לנוח — <em>כדי שתכיר את אבא שלך.</em>",
+          s1_eyebrow: "מה המקום הזה",
+          s1_lead:
+            "לוקה היה החבר הכי קרוב שלי. נשמה טהורה, עם חלומות גדולים לבנו.",
+          s1_p: "נוח נולד לפני חודשים ספורים, והוא לא יזכור אותו. אז אנחנו בונים לו מקום אחד — שבו הקול של אבא שלו, הפנים שלו, והסיפורים של כל מי שאהב אותו יחכו לו. כדי שיום אחד, כשיהיה מוכן, יוכל לבוא לכאן ולפגוש את אבא שלו.",
+          s1_muted:
+            "הוא נבנה עכשיו, ביחד. הוא ימשיך לגדול כל עוד יש מה להוסיף.",
+          s2_eyebrow: "איך אפשר לעזור",
+          s2_h2: "אם הכרת את לוקה, יש בך חלק ממנו.",
+          s2_p: "מה שהכי חשוב הוא לא מה שכתוב — אלא הקול שלו והפנים שלו. שלחו כל דבר שיש בו לוקה:",
+          s2_li1:
+            "<strong>הקלטות קול וסרטונים</strong> — כל רגע שיש בו הקול שלו. זה מה שנעלם הכי מהר, וזה מה שנוח ירצה הכי הרבה.",
+          s2_li2: "<strong>תמונות</strong> — מכל תקופה, אפילו הכי יומיומיות.",
+          s2_li3:
+            "<strong>זיכרון או סיפור</strong> — בדיחה שלו, ביטוי, רגע. הקטן והאישי ביותר הוא היקר ביותר.",
+          s2_li4:
+            "ואם לוקה דיבר איתך פעם על <strong>נוח</strong>, על להיות אבא — זה מה שהכי הייתי רוצה שנוח ישמע.",
+          cta_share: "לשתף זיכרון",
+          s3_eyebrow: "השאירו משהו לנוח",
+          s3_h2: "שתפו זיכרון של לוקה.",
+          s3_privacy:
+            "זה מגיע ישירות אליי — שרון, החבר הכי קרוב של לוקה. שום דבר לא מתפרסם ללא אישור.",
+          f_name: "השם שלך",
+          f_email: "האימייל שלך",
+          f_how: "איך הכרת את לוקה?",
+          f_memory: "הזיכרון שלך מלוקה",
+          f_noah: "האם לוקה דיבר איתך פעם על נוח, או על להיות אבא?",
+          f_files: "תמונות או הקלטות קול",
+          opt: "רשות",
+          hint_memory:
+            "סיפור, רגע, בדיחה שלו — איך הוא היה. הפרט הקטן והאישי ביותר הוא היקר ביותר.",
+          hint_noah: "זה מה שנוח הכי ירצה לשמוע.",
+          hint_files:
+            "כל דבר שיש בו הקול שלו או הפנים שלו. סרטונים גדולים אפשר גם לשלוח אליי ישירות.",
+          btn: "לשלוח את זה לנוח",
+          s4_eyebrow: "מה ייאסף כאן",
+          s4_icons: "קולות · פנים · סיפורים",
+          s4_text:
+            "כאן ייאספו הקול, התמונות והסיפורים של לוקה — לנוח, ליום שבו יהיה מוכן.",
+          footer: "אוהבים את לוקה · לזכר לוקה סקורוחוד",
+        },
+        ru: {
+          father_line: "Отец Ноа · 12 августа 2026",
+          forwhom: "Для Ноа — <em>чтобы ты знал своего отца.</em>",
+          s1_eyebrow: "Что это за место",
+          s1_lead:
+            "Лука был моим самым близким другом. Чистая душа, с большими мечтами о своём сыне.",
+          s1_p: "Ноа родился всего несколько месяцев назад и не будет его помнить. Поэтому мы создаём для него одно место — где голос его отца, его лицо и истории всех, кто его любил, будут ждать. Чтобы однажды, когда он будет готов, он смог прийти сюда и встретить своего папу.",
+          s1_muted:
+            "Оно создаётся сейчас, вместе. Оно будет расти, пока есть что добавить.",
+          s2_eyebrow: "Как вы можете помочь",
+          s2_h2: "Если вы знали Луку, в вас живёт частичка его.",
+          s2_p: "Важнее всего не то, что написано, — а его голос и его лицо. Присылайте всё, где есть Лука:",
+          s2_li1:
+            "<strong>Голосовые сообщения и видео</strong> — любой момент с его голосом. Это исчезает быстрее всего и это то, чего Ноа захочет больше всего.",
+          s2_li2:
+            "<strong>Фотографии</strong> — из любого времени, даже самые обычные.",
+          s2_li3:
+            "<strong>Воспоминание или история</strong> — его шутка, присказка, момент. Самое маленькое и личное — самое драгоценное.",
+          s2_li4:
+            "И если Лука когда-нибудь говорил с вами о <strong>Ноа</strong>, о том, каково быть отцом, — это то, что я больше всего хочу, чтобы Ноа услышал.",
+          cta_share: "Поделиться воспоминанием",
+          s3_eyebrow: "Оставьте что-то для Ноа",
+          s3_h2: "Поделитесь воспоминанием о Луке.",
+          s3_privacy:
+            "Это придёт прямо ко мне — Шарону, самому близкому другу Луки. Ничего не публикуется без согласия.",
+          f_name: "Ваше имя",
+          f_email: "Ваш email",
+          f_how: "Откуда вы знали Луку?",
+          f_memory: "Ваше воспоминание о Луке",
+          f_noah:
+            "Говорил ли Лука с вами когда-нибудь о Ноа или о том, чтобы стать отцом?",
+          f_files: "Фотографии или голосовые записи",
+          opt: "необязательно",
+          hint_memory:
+            "История, момент, его шутка — каким он был. Самая маленькая, личная деталь — самая ценная.",
+          hint_noah: "Это то, что Ноа больше всего захочет услышать.",
+          hint_files:
+            "Всё, где есть его голос или лицо. Большие видео можно также прислать мне напрямую.",
+          btn: "Передать это Ноа",
+          s4_eyebrow: "Что соберётся здесь",
+          s4_icons: "Голоса · Лица · Истории",
+          s4_text:
+            "Здесь соберутся голос, фотографии и истории Луки — для Ноа, к тому дню, когда он будет готов.",
+          footer: "Мы любим Луку · Памяти Луки Скорохода",
+        },
+        fr: {
+          father_line: "Père de Noah · 12 août 2026",
+          forwhom: "Pour Noah — <em>pour que tu connaisses ton père.</em>",
+          s1_eyebrow: "Ce qu'est cet endroit",
+          s1_lead:
+            "Luka était mon ami le plus proche. Une âme pure, avec de grands rêves pour son fils.",
+          s1_p: "Noah est né il y a quelques mois seulement, et il ne se souviendra pas de lui. Alors nous lui construisons un endroit — où la voix de son père, son visage, et les histoires de tous ceux qui l'ont aimé l'attendront. Pour qu'un jour, quand il sera prêt, il puisse venir ici et rencontrer son papa.",
+          s1_muted:
+            "Il se construit maintenant, ensemble. Il continuera de grandir tant qu'il y aura des choses à ajouter.",
+          s2_eyebrow: "Comment vous pouvez aider",
+          s2_h2: "Si vous avez connu Luka, vous détenez une part de lui.",
+          s2_p: "Ce qui compte le plus, ce n'est pas ce qui est écrit — c'est sa voix et son visage. Envoyez tout ce qui contient Luka :",
+          s2_li1:
+            "<strong>Notes vocales et vidéos</strong> — le moindre moment avec sa voix. C'est ce qui disparaît le plus vite, et ce que Noah désirera le plus.",
+          s2_li2:
+            "<strong>Photos</strong> — de n'importe quelle époque, même les plus ordinaires.",
+          s2_li3:
+            "<strong>Un souvenir ou une histoire</strong> — une de ses blagues, une expression, un instant. Le plus petit et le plus personnel est le plus précieux.",
+          s2_li4:
+            "Et si Luka vous a parlé un jour de <strong>Noah</strong>, de devenir père — c'est ce que je souhaite le plus que Noah entende.",
+          cta_share: "Partager un souvenir",
+          s3_eyebrow: "Laissez quelque chose pour Noah",
+          s3_h2: "Partagez un souvenir de Luka.",
+          s3_privacy:
+            "Cela m'arrive directement — à moi, Sharon, le plus proche ami de Luka. Rien n'est publié sans autorisation.",
+          f_name: "Votre nom",
+          f_email: "Votre e-mail",
+          f_how: "Comment avez-vous connu Luka ?",
+          f_memory: "Votre souvenir de Luka",
+          f_noah: "Luka vous a-t-il parlé de Noah, ou de devenir père ?",
+          f_files: "Photos ou notes vocales",
+          opt: "facultatif",
+          hint_memory:
+            "Une histoire, un moment, une de ses blagues — comment il était. Le détail le plus petit et le plus personnel est le plus précieux.",
+          hint_noah: "C'est ce que Noah désirera le plus entendre.",
+          hint_files:
+            "Tout ce qui contient sa voix ou son visage. Pour les grandes vidéos, vous pouvez aussi me les envoyer directement.",
+          btn: "Transmettre ceci à Noah",
+          s4_eyebrow: "Ce qui se rassemblera ici",
+          s4_icons: "Voix · Visages · Histoires",
+          s4_text:
+            "C'est ici que se rassembleront la voix, les photos et les histoires de Luka — pour Noah, pour le jour où il sera prêt.",
+          footer: "We Love Luka · À la mémoire de Luka Skorochod",
+        },
+        nl: {
+          father_line: "Vader van Noah · 12 augustus 2026",
+          forwhom: "Voor Noah — <em>zodat je je vader zult kennen.</em>",
+          s1_eyebrow: "Wat deze plek is",
+          s1_lead:
+            "Luka was mijn beste vriend. Een zuivere ziel, met grote dromen voor zijn zoon.",
+          s1_p: "Noah is pas enkele maanden geleden geboren en zal zich hem niet herinneren. Daarom bouwen we voor hem één plek — waar de stem van zijn vader, zijn gezicht en de verhalen van iedereen die van hem hield zullen wachten. Zodat hij op een dag, wanneer hij er klaar voor is, hierheen kan komen en zijn papa kan ontmoeten.",
+          s1_muted:
+            "Het wordt nu gebouwd, samen. Het zal blijven groeien zolang er iets toe te voegen is.",
+          s2_eyebrow: "Hoe je kunt helpen",
+          s2_h2: "Als je Luka kende, draag je een stukje van hem in je.",
+          s2_p: "Wat het meest telt, is niet wat geschreven is — het is zijn stem en zijn gezicht. Stuur alles waar Luka in zit:",
+          s2_li1:
+            "<strong>Spraakberichten en video's</strong> — elk moment met zijn stem erin. Dit verdwijnt het snelst, en dit is wat Noah het liefst zal willen.",
+          s2_li2:
+            "<strong>Foto's</strong> — uit elke periode, zelfs de meest gewone.",
+          s2_li3:
+            "<strong>Een herinnering of een verhaal</strong> — een grap van hem, een uitdrukking, een moment. Het kleinste en meest persoonlijke is het kostbaarst.",
+          s2_li4:
+            "En als Luka ooit met je over <strong>Noah</strong> heeft gesproken, over vader worden — dat is wat ik Noah het liefst wil laten horen.",
+          cta_share: "Deel een herinnering",
+          s3_eyebrow: "Laat iets achter voor Noah",
+          s3_h2: "Deel een herinnering aan Luka.",
+          s3_privacy:
+            "Het komt rechtstreeks bij mij terecht — Sharon, Luka's beste vriend. Er wordt niets gepubliceerd zonder toestemming.",
+          f_name: "Je naam",
+          f_email: "Je e-mail",
+          f_how: "Hoe kende je Luka?",
+          f_memory: "Jouw herinnering aan Luka",
+          f_noah:
+            "Heeft Luka ooit met je gesproken over Noah, of over vader worden?",
+          f_files: "Foto's of spraakberichten",
+          opt: "optioneel",
+          hint_memory:
+            "Een verhaal, een moment, een grap van hem — hoe hij was. Het kleinste, meest persoonlijke detail is het kostbaarst.",
+          hint_noah: "Dit is wat Noah het liefst zal willen horen.",
+          hint_files:
+            "Alles met zijn stem of gezicht erin. Grote video's kun je ook rechtstreeks naar mij sturen.",
+          btn: "Deel dit met Noah",
+          s4_eyebrow: "Wat zich hier zal verzamelen",
+          s4_icons: "Stemmen · Gezichten · Verhalen",
+          s4_text:
+            "Hier zullen Luka's stem, foto's en verhalen samenkomen — voor Noah, voor de dag dat hij er klaar voor is.",
+          footer: "We Love Luka · Ter nagedachtenis aan Luka Skorochod",
+        },
+      };
+      const RTL = ["he"];
+      function setLang(l) {
+        const d = T[l] || T.en;
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          const k = el.getAttribute("data-i18n");
+          if (d[k] != null) el.innerHTML = d[k];
+        });
+        document.documentElement.lang = l;
+        document.documentElement.dir = RTL.indexOf(l) > -1 ? "rtl" : "ltr";
+        document.querySelectorAll(".langbar button").forEach(function (b) {
+          b.setAttribute(
+            "aria-current",
+            b.getAttribute("data-lang") === l ? "true" : "false",
+          );
+        });
+        try {
+          localStorage.setItem("wl_lang", l);
+        } catch (e) {}
+      }
+      (function () {
+        let l = null;
+        try {
+          l = localStorage.getItem("wl_lang");
+        } catch (e) {}
+        if (!l || !T[l]) {
+          const n = (navigator.language || "en").slice(0, 2).toLowerCase();
+          l = T[n] ? n : "en";
+        }
+        document.querySelectorAll(".langbar button").forEach(function (b) {
+          b.addEventListener("click", function () {
+            setLang(b.getAttribute("data-lang"));
+          });
+        });
+        setLang(l);
+      })();
+    </script>
   </body>
 </html>

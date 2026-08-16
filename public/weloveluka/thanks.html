@@ -95,13 +95,70 @@
           />
         </svg>
       </div>
-      <h1 class="serif">Thank you.</h1>
-      <p>What you shared is now part of what Noah will one day open.</p>
-      <p class="muted">
+      <h1 class="serif" data-i18n="title">Thank you.</h1>
+      <p data-i18n="p1">
+        What you shared is now part of what Noah will one day open.
+      </p>
+      <p class="muted" data-i18n="p2">
         It means more than you know. If you have more — a photo, his voice, a
         story you forgot — you can always come back and add it.
       </p>
-      <a class="back" href="/weloveluka/">Back to Luka's page</a>
+      <a class="back" href="/weloveluka/" data-i18n="back"
+        >Back to Luka's page</a
+      >
     </div>
+
+    <script>
+      const T = {
+        en: {
+          title: "Thank you.",
+          p1: "What you shared is now part of what Noah will one day open.",
+          p2: "It means more than you know. If you have more — a photo, his voice, a story you forgot — you can always come back and add it.",
+          back: "Back to Luka's page",
+        },
+        he: {
+          title: "תודה.",
+          p1: "מה ששיתפת הוא עכשיו חלק ממה שנוח יפתח יום אחד.",
+          p2: "זה אומר יותר משנדמה לך. אם יש לך עוד — תמונה, הקול שלו, סיפור ששכחת — אתה תמיד יכול לחזור ולהוסיף.",
+          back: "חזרה לעמוד של לוקה",
+        },
+        ru: {
+          title: "Спасибо.",
+          p1: "То, чем вы поделились, теперь часть того, что Ноа однажды откроет.",
+          p2: "Это значит больше, чем вы думаете. Если у вас есть ещё — фотография, его голос, история, которую вы забыли, — вы всегда можете вернуться и добавить.",
+          back: "Вернуться на страницу Луки",
+        },
+        fr: {
+          title: "Merci.",
+          p1: "Ce que vous avez partagé fait désormais partie de ce que Noah ouvrira un jour.",
+          p2: "Cela compte plus que vous ne le pensez. Si vous avez autre chose — une photo, sa voix, un souvenir oublié — vous pouvez toujours revenir l'ajouter.",
+          back: "Retour à la page de Luka",
+        },
+        nl: {
+          title: "Dank je.",
+          p1: "Wat je hebt gedeeld, maakt nu deel uit van wat Noah op een dag zal openen.",
+          p2: "Het betekent meer dan je weet. Als je meer hebt — een foto, zijn stem, een verhaal dat je vergat — kun je altijd terugkomen en het toevoegen.",
+          back: "Terug naar Luka's pagina",
+        },
+      };
+      const RTL = ["he"];
+      (function () {
+        let l = null;
+        try {
+          l = localStorage.getItem("wl_lang");
+        } catch (e) {}
+        if (!l || !T[l]) {
+          const n = (navigator.language || "en").slice(0, 2).toLowerCase();
+          l = T[n] ? n : "en";
+        }
+        const d = T[l] || T.en;
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          const k = el.getAttribute("data-i18n");
+          if (d[k] != null) el.textContent = d[k];
+        });
+        document.documentElement.lang = l;
+        document.documentElement.dir = RTL.indexOf(l) > -1 ? "rtl" : "ltr";
+      })();
+    </script>
   </body>
 </html>
