@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Footer from "../../components/Footer";
 
 export default function LezelPost() {
   return (
@@ -147,6 +148,8 @@ export default function LezelPost() {
           </Link>
         </div>
       </article>
+
+      <Footer />
     </div>
   );
 }

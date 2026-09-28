@@ -11,22 +11,6 @@ export default function Blog() {
       date: "June 2026",
       category: "Projects",
     },
-    {
-      slug: "agentic-agency-journey",
-      title: "Building an Agentic Agency: Lessons from 13 Autonomous Agents",
-      excerpt:
-        "How we built a system of autonomous agents that handle customer acquisition, content creation, and analysis—without human intervention.",
-      date: "Coming Soon",
-      category: "Agentic Agency",
-    },
-    {
-      slug: "last-founder-podcast",
-      title: "The-Last-Founder: Why We Build Live",
-      excerpt:
-        "Why watching founders make mistakes in real-time is more valuable than any polished case study.",
-      date: "Coming Soon",
-      category: "Podcast",
-    },
   ];
 
   return (

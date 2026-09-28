@@ -3,7 +3,15 @@ export default function Footer() {
     <footer className="px-8 py-8 border-t border-line">
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center text-xs text-muted gap-8">
         <p>© 2026 Sharon Shineberg</p>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
+          <a
+            href="https://thelastfounder.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-60 transition"
+          >
+            The Last Founder
+          </a>
           <a
             href="https://www.linkedin.com/in/sharonshineberg/"
             target="_blank"
