@@ -4,12 +4,20 @@ import Footer from "../components/Footer";
 export default function Blog() {
   const posts = [
     {
-      slug: "lezel-cannabis-ai",
+      href: "/blog/lezel-cannabis-ai",
       title: "lezel: From Cannabis Research to AI-Powered Personalization",
       excerpt:
         "In 2019, I was asked to research cannabis. What I discovered became a 6-year journey into building a company that uses AI to help people personalize their own use.",
       date: "June 2026",
       category: "Projects",
+    },
+    {
+      href: "/guide",
+      title: "המדריך: איך לחבר את Instinct ל-WhatsApp ולכספת Obsidian",
+      excerpt:
+        "An open, step-by-step guide (in Hebrew) to connecting Instinct to WhatsApp, Apple Reminders and an Obsidian vault - and working alongside Claude. Prompts included.",
+      date: "September 2026",
+      category: "Guide",
     },
   ];
 
@@ -56,7 +64,7 @@ export default function Blog() {
               <h2 className="text-2xl font-bold mb-3">{post.title}</h2>
               <p className="text-lg text-body mb-4">{post.excerpt}</p>
               <Link
-                href={`/blog/${post.slug}`}
+                href={post.href}
                 className="text-ink underline hover:opacity-60"
               >
                 Read article →
