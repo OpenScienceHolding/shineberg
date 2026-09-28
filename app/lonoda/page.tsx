@@ -5,11 +5,11 @@ export default function Lonoda() {
   const projects = [
     {
       emoji: "🤖",
-      title: "Agentic Agency",
+      title: "Reef TRH",
       description:
-        "Building autonomous systems that acquire customers through LinkedIn, WhatsApp, and partnerships.",
+        "AI strategy and execution for companies - diagnosis first, then systems that deliver return. My agency with Raviv.",
       status: "Active",
-      link: "#",
+      link: "https://reeftrh.com",
     },
     {
       emoji: "🎙️",

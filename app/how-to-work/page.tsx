@@ -196,7 +196,7 @@ export default function WorkWithMe() {
 
           <div className="border-t border-line pt-16 text-center">
             <h2 className="text-3xl font-bold mb-6">Contact</h2>
-            <p className="text-lg text-body mb-2">Fastest: WhatsApp.</p>
+            <p className="text-lg text-body mb-2">Already in touch? WhatsApp is fastest.</p>
             <p className="text-lg text-body mb-10">
               Formal:{" "}
               <a href="mailto:sharon@shineberg.com" className={linkClass}>

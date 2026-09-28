@@ -87,7 +87,7 @@ export default function Agent() {
 
         <h2 className="text-3xl font-bold mb-6">Prefer a human path?</h2>
         <p className="text-lg text-body">
-          WhatsApp is fastest. Formal:{" "}
+          Already in touch? WhatsApp is fastest. Formal:{" "}
           <a
             href="mailto:sharon@shineberg.com"
             className="underline hover:opacity-60"

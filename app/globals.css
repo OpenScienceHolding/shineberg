@@ -10,6 +10,9 @@
   --color-body: #727170;
   --color-muted: #9f9f9e;
   --color-line: #dcd6ca;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
 }
 
 /* Base styles live in the base layer so Tailwind utilities can override them. */
@@ -48,6 +51,14 @@
 
   p {
     margin-bottom: 1rem;
+  }
+
+  /* Brand pairing: Playfair for headings, Hanken for running text. */
+  p,
+  li,
+  blockquote,
+  td {
+    font-family: var(--font-sans);
   }
 
   ul,

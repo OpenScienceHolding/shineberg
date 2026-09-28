@@ -30,9 +30,8 @@ export default function About() {
 
           <div className="space-y-12 text-lg text-body">
             <p className="text-center text-xl leading-relaxed">
-              I'm an entrepreneur and innovation analyst. My mission: help
-              companies navigate complexity and build tomorrow's solutions using
-              AI and strategic thinking.
+              I&apos;m an entrepreneur - and an advisor and companion to ventures
+              from day one. Direct talk, defined scope, real partnership.
             </p>
 
             {/* Timeline */}
@@ -129,11 +128,27 @@ export default function About() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold">What I'm Building Now</h2>
               <p>
-                <strong>Agentic Agency</strong> — Autonomous customer
-                acquisition systems that help companies grow through AI agents
+                <a
+                  href="https://reeftrh.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:opacity-60"
+                >
+                  <strong>Reef TRH</strong>
+                </a>{" "}
+                — AI strategy and execution for companies: diagnosis first,
+                then systems that deliver return. My agency with Raviv.
               </p>
               <p>
-                <strong>The-Last-Founder Podcast</strong> — Real-time
+                <a
+                  href="https://thelastfounder.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:opacity-60"
+                >
+                  <strong>The-Last-Founder Podcast</strong>
+                </a>{" "}
+                — Real-time
                 experiments in building, no script, no polish, just raw
                 entrepreneurship
               </p>
