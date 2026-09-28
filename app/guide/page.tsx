@@ -230,16 +230,16 @@ export default function Guide() {
             <strong>
               תיקיית <Ltr>System/</Ltr>
             </strong>{" "}
-            - &quot;איך לעבוד איתי&quot;. קובץ <Ltr>INDEX.md</Ltr> שמוגדר כמקור
+            - &quot;איך לעבוד איתי&quot;. קובץ <Ltr>INDEX.md</Ltr>{" "}שמוגדר כמקור
             האמת היחיד, ומפנה לקבצים ממוספרים: מי אני, כללי עבודה, תוכן וקול,
             פרויקטים, אנשים, כלים ואוטומציה, מבנה הכספת, תהליכי עבודה. כל סוכן
             קורא את INDEX ואת קובץ כללי העבודה בתחילת סשן. אצל Claude, קובץ ה-
-            <Ltr>CLAUDE.md</Ltr> הגלובלי מחזיק רק מצביע לתיקייה הזו, כך שיש מקור
+            <Ltr>CLAUDE.md</Ltr>{" "}הגלובלי מחזיק רק מצביע לתיקייה הזו, כך שיש מקור
             אחד ולא שניים.
           </li>
           <li>
             <strong>יומן פעולות לכל סוכן</strong>{" "}- למשל{" "}
-            <Ltr>Instinct Log.md</Ltr> בשורש הכספת. יומן שרק מוסיפים אליו: לכל
+            <Ltr>Instinct Log.md</Ltr>{" "}בשורש הכספת. יומן שרק מוסיפים אליו: לכל
             רשומה יש שם הסוכן, תאריך ושעה, מה נעשה, ואילו קבצים נגעו. ככה רואים
             מי שינה מה, והסוכן השני יודע מה קרה בלעדיו.
           </li>
@@ -404,8 +404,8 @@ export default function Guide() {
           </li>
           <li>
             מסנן להודעות טקסט, וכותב קובץ Markdown לכל צ&apos;אט, עם ההודעות לפי
-            תאריך, לתיקייה <Ltr>WhatsApp/</Ltr> בכספת. בנוסף כותב קובץ{" "}
-            <Ltr>INDEX.md</Ltr> עם רשימת כל הצ&apos;אטים.
+            תאריך, לתיקייה <Ltr>WhatsApp/</Ltr>{" "}בכספת. בנוסף כותב קובץ{" "}
+            <Ltr>INDEX.md</Ltr>{" "}עם רשימת כל הצ&apos;אטים.
           </li>
           <li>
             הריצה אינקרמנטלית: קובץ state קטן שומר עד איפה הגיעה הריצה הקודמת,
@@ -440,7 +440,7 @@ export default function Guide() {
         <p className="text-lg text-body">
           Instinct קורא את קבצי ה-WhatsApp בכספת (קריאה בלבד), בונה מהם כרטיסי
           אנשים בתיקייה נפרדת (למשל <Ltr>People/CRM/</Ltr>), ומשתמש בהם כדי לדעת
-          מי מחכה לתשובה. את קבצי המקור ב-<Ltr>WhatsApp/</Ltr> לא עורכים אף פעם.
+          מי מחכה לתשובה. את קבצי המקור ב-<Ltr>WhatsApp/</Ltr>{" "}לא עורכים אף פעם.
         </p>
 
         <H3>ג. Apple Reminders ↔ קובץ משימות בכספת</H3>
@@ -493,7 +493,7 @@ export default function Guide() {
           <li>
             <strong>API (הכי מומלץ לסנכרון read-only יומי)</strong>{" "}-
             ל-Workflowy יש API רשמי עם מפתח API. ה-endpoint{" "}
-            <Ltr>GET /api/v1/nodes-export</Ltr> מחזיר את כל הבולטים ברשימה שטוחה
+            <Ltr>GET /api/v1/nodes-export</Ltr>{" "}מחזיר את כל הבולטים ברשימה שטוחה
             עם <Ltr>parent_id</Ltr>, ומוגבל לקריאה אחת בדקה. סקריפט Python
             ב-LaunchAgent יומי מושך את הרשימה, בונה ממנה עץ, וכותב קובץ Markdown
             לכספת. את מפתח ה-API שומרים ב-Keychain של macOS, לא בקובץ בתוך
