@@ -75,7 +75,7 @@ export default function WorkWithMe() {
         <div className="max-w-2xl w-full">
           <h1 className="text-6xl font-bold mb-8 text-center">Work With Me</h1>
           <p className="text-xl text-body text-center mb-20 leading-relaxed">
-            <strong className="text-ink">TLDR:</strong> I&apos;m an advisor and
+            <strong className="text-ink">TLDR:</strong>{" "}I&apos;m an advisor and
             companion to ventures from day one. Direct talk, defined scope, real
             partnership. I move fast when the plan is concrete.
           </p>

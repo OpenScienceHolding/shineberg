@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-paper text-ink font-serif flex flex-col">
       {/* Navigation */}
-      <nav className="flex justify-between items-center px-12 py-8 border-b border-line">
+      <nav className="flex justify-between items-center gap-4 px-6 md:px-12 py-8 border-b border-line">
         <Link href="/" className="text-lg font-semibold">
           Sharon Shineberg
         </Link>
-        <div className="flex gap-8 text-sm">
+        <div className="flex flex-wrap justify-end gap-x-4 gap-y-1 md:gap-8 text-sm whitespace-nowrap">
           <Link href="/about" className="hover:opacity-60">
             About
           </Link>

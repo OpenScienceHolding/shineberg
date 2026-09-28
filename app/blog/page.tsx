@@ -23,11 +23,11 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-paper text-ink font-serif">
-      <nav className="flex justify-between items-center px-8 py-6 border-b border-ink">
+      <nav className="flex justify-between items-center gap-4 px-6 md:px-8 py-6 border-b border-ink">
         <Link href="/" className="text-sm font-semibold hover:opacity-60">
           Sharon Shineberg
         </Link>
-        <div className="flex gap-8 text-sm">
+        <div className="flex flex-wrap justify-end gap-x-4 gap-y-1 md:gap-8 text-sm whitespace-nowrap">
           <Link href="/about" className="hover:opacity-60">
             About
           </Link>
