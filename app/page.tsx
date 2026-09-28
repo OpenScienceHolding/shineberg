@@ -14,7 +14,7 @@ export default function Home() {
             About
           </Link>
           <Link href="/how-to-work" className="hover:opacity-60">
-            How to Work
+            Work With Me
           </Link>
           <Link href="/lonoda" className="hover:opacity-60">
             lonoda
@@ -34,27 +34,35 @@ export default function Home() {
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-8xl md:text-9xl font-bold leading-tight mb-8">
-            I'm an <br />
-            <span className="italic font-normal">Innovation Strategist.</span>
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8">
+            Advisor &amp; companion <br />
+            <span className="italic font-normal">
+              to ventures from day one.
+            </span>
           </h1>
 
           {/* Description */}
           <p className="text-2xl text-body mb-16 max-w-2xl mx-auto leading-relaxed">
-            I help companies navigate complexity and build tomorrow's solutions.
+            Direct talk, defined scope, real partnership. I move fast when the
+            plan is concrete.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20">
-            <Link href="/agent" className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition">
-              Talk to my agent
-            </Link>
             <Link
-              href="/about"
+              href="/how-to-work"
+              className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
+            >
+              Work with me
+            </Link>
+            <a
+              href="https://reeftrh.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-8 py-3 border border-ink text-ink text-sm font-medium hover:opacity-60 transition"
             >
-              Learn More →
-            </Link>
+              For companies — Reef TRH
+            </a>
           </div>
         </div>
       </section>
@@ -84,20 +92,23 @@ export default function Home() {
           <div className="space-y-16 mb-12">
             <div>
               <p className="text-sm text-muted mb-3">01</p>
-              <h2 className="text-3xl font-bold mb-3">Project Partnership</h2>
+              <h2 className="text-3xl font-bold mb-3">Join one of my ventures</h2>
               <p className="text-lg text-body leading-relaxed">
-                From strategy through execution. I work alongside you to
-                navigate uncertainty, identify opportunities, and build what
-                matters.
+                Reef TRH, The-Last-Founder Podcast, unschool.live - let&apos;s talk about equity, roles, and what you want to build.
               </p>
             </div>
-
             <div>
               <p className="text-sm text-muted mb-3">02</p>
-              <h2 className="text-3xl font-bold mb-3">Consulting & Analysis</h2>
+              <h2 className="text-3xl font-bold mb-3">Build something new together</h2>
               <p className="text-lg text-body leading-relaxed">
-                Specific questions deserve deep dives. Market strategy, agent
-                systems, competitive intelligence, or navigating the unknown.
+                You have an idea, I have experience. Strategy, system design, go-to-market, and execution.
+              </p>
+            </div>
+            <div>
+              <p className="text-sm text-muted mb-3">03</p>
+              <h2 className="text-3xl font-bold mb-3">I join your venture</h2>
+              <p className="text-lg text-body leading-relaxed">
+                As advisor, consultant, or part-time strategic lead - from a single deep meeting to a long-term partnership.
               </p>
             </div>
           </div>
@@ -128,13 +139,22 @@ export default function Home() {
               <div className="flex flex-col items-center gap-4 mb-3">
                 <span className="text-3xl">🤖</span>
                 <div>
-                  <h3 className="text-2xl font-bold">Agentic Agency</h3>
+                  <h3 className="text-2xl font-bold">
+                    <a
+                      href="https://reeftrh.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-60"
+                    >
+                      Reef TRH
+                    </a>
+                  </h3>
                   <p className="text-sm text-muted mt-1">Active</p>
                 </div>
               </div>
               <p className="text-lg text-body">
-                Building autonomous systems that acquire customers through
-                LinkedIn, WhatsApp, and partnerships.
+                AI strategy and execution for companies - diagnosis first, then
+                systems that deliver return. My agency with Raviv.
               </p>
             </div>
 
@@ -143,7 +163,14 @@ export default function Home() {
                 <span className="text-3xl">🎙️</span>
                 <div>
                   <h3 className="text-2xl font-bold">
-                    The-Last-Founder Podcast
+                    <a
+                      href="https://thelastfounder.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-60"
+                    >
+                      The-Last-Founder Podcast
+                    </a>
                   </h3>
                   <p className="text-sm text-muted mt-1">Recording</p>
                 </div>
@@ -174,7 +201,7 @@ export default function Home() {
         <div className="max-w-2xl">
           <h2 className="text-6xl font-bold mb-6">Ready to work together?</h2>
           <p className="text-xl text-body mb-12">
-            Let's talk about your vision and what's possible.
+            The fastest way to reach me is through my agent.
           </p>
           <Link href="/agent" className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition">
               Talk to my agent

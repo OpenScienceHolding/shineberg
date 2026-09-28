@@ -7,6 +7,7 @@ const routes = [
   "",
   "/how-to-work",
   "/agent",
+  "/guide",
   "/about",
   "/lonoda",
   "/blog",

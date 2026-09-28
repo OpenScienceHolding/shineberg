@@ -1,14 +1,29 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sharon Shineberg | Innovation Strategist",
+  metadataBase: new URL("https://shineberg.com"),
+  title: "Sharon Shineberg | Advisor & companion to ventures from day one",
   description:
-    "I help companies navigate complexity and build tomorrow's solutions using AI and strategic thinking.",
+    "Advisor and companion to ventures from day one. Direct talk, defined scope, real partnership. For AI strategy and execution, see Reef TRH.",
   keywords:
-    "Innovation, Strategy, AI, Startups, Entrepreneurship, Agentic Systems",
+    "Advisor, Ventures, Startups, AI, Agentic Systems, Reef TRH, The Last Founder",
   authors: [{ name: "Sharon Shineberg" }],
-  viewport: "width=device-width, initial-scale=1",
+  openGraph: {
+    type: "website",
+    siteName: "Sharon Shineberg",
+    title: "Sharon Shineberg | Advisor & companion to ventures from day one",
+    description:
+      "Direct talk, defined scope, real partnership. I move fast when the plan is concrete.",
+    url: "https://shineberg.com",
+  },
+  twitter: { card: "summary_large_image" },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#F5F0E8",
 };
 
 export default function RootLayout({
@@ -20,7 +35,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <meta charSet="utf-8" />
-        <meta name="theme-color" content="#F5F0E8" />
       </head>
       <body className="bg-paper text-ink antialiased font-sans">
         {children}

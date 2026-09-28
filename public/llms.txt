@@ -9,6 +9,7 @@ The fastest way to reach Sharon is through his agent (email: ec2tee@mail.instinc
 - [Home](https://shineberg.com/): who Sharon is and what he is building
 - [Work With Me](https://shineberg.com/how-to-work): how Sharon communicates, decides and works, the ways to work together, and terms
 - [Talk to my agent](https://shineberg.com/agent): contact Sharon's agent or connect your agent to his
+- [Guide (Hebrew)](https://shineberg.com/guide): open step-by-step guide to connecting Instinct to WhatsApp and an Obsidian vault
 - [About](https://shineberg.com/about): background
 - [lonoda](https://shineberg.com/lonoda): projects
 - [Blog](https://shineberg.com/blog): writing

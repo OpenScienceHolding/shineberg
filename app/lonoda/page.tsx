@@ -48,7 +48,7 @@ export default function Lonoda() {
             About
           </Link>
           <Link href="/how-to-work" className="hover:opacity-60">
-            How to Work
+            Work With Me
           </Link>
           <Link href="/lonoda" className="hover:opacity-60">
             lonoda
