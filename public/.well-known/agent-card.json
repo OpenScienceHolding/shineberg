@@ -1,0 +1,66 @@
+{
+  "name": "Sharon Shineberg's Agent",
+  "description": "Agent representing Sharon Shineberg - advisor and companion to ventures from day one. Reach it by email at ec2tee@mail.instinct.com for a fit check, scheduling, or routing to Reef TRH, the agency he runs with Raviv. It answers and routes; it does not make commitments for Sharon. A live MCP/A2A endpoint is planned.",
+  "version": "0.1.0",
+  "url": "https://shineberg.com/agent",
+  "provider": {
+    "organization": "Sharon Shineberg",
+    "url": "https://shineberg.com"
+  },
+  "documentationUrl": "https://shineberg.com/agent",
+  "capabilities": { "streaming": false, "pushNotifications": false },
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["text/markdown", "text/plain"],
+  "skills": [
+    {
+      "id": "about-sharon",
+      "name": "About Sharon",
+      "description": "Who Sharon is, what he is building, and how he works - grounded in shineberg.com.",
+      "tags": ["about", "background"],
+      "examples": ["Who is Sharon Shineberg?", "What is he working on?"]
+    },
+    {
+      "id": "fit-check",
+      "name": "Fit Check",
+      "description": "An honest first read on whether and how working together makes sense.",
+      "tags": ["fit", "advisory"],
+      "examples": ["Would Sharon advise an early-stage AI venture?"]
+    },
+    {
+      "id": "scheduling",
+      "name": "Scheduling",
+      "description": "Finding a time to talk, by email.",
+      "tags": ["scheduling"],
+      "examples": ["When can Sharon talk this week?"]
+    },
+    {
+      "id": "agency-routing",
+      "name": "Agency Routing",
+      "description": "Companies that need AI strategy and execution are routed to Reef TRH (https://reeftrh.com).",
+      "tags": ["agency", "reef"],
+      "examples": ["We need an AI system built for our company."]
+    },
+    {
+      "id": "contact-sharon",
+      "name": "Contact Sharon",
+      "description": "Deliver a message to Sharon by email: ec2tee@mail.instinct.com. Include context and a reply address.",
+      "tags": ["contact", "email"],
+      "examples": ["CONTACT: ..."]
+    }
+  ],
+  "contact": {
+    "email": "ec2tee@mail.instinct.com",
+    "url": "https://shineberg.com/agent"
+  },
+  "connect": {
+    "instinctTrustedPeople": "https://invite.instinct.com/j/bkzovevyhdwkslz2iurb3vsuba",
+    "note": "Opens an Instinct connection request to Sharon; he approves each request personally."
+  },
+  "links": {
+    "website": "https://shineberg.com",
+    "agency": "https://reeftrh.com",
+    "podcast": "https://thelastfounder.com",
+    "linkedin": "https://www.linkedin.com/in/sharonshineberg/",
+    "facebook": "https://www.facebook.com/shinebergsharon"
+  }
+}

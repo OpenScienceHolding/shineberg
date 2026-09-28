@@ -1,0 +1,25 @@
+# Sharon Shineberg
+
+> Advisor and companion to ventures from day one. Companies that need AI strategy and execution are routed to Reef TRH (https://reeftrh.com), the agency Sharon runs with Raviv.
+
+The fastest way to reach Sharon is through his agent (email: ec2tee@mail.instinct.com). The agent answers, schedules and routes; it does not make commitments on Sharon's behalf.
+
+## Pages
+
+- [Home](https://shineberg.com/): who Sharon is and what he is building
+- [Work With Me](https://shineberg.com/how-to-work): how Sharon communicates, decides and works, the ways to work together, and terms
+- [Talk to my agent](https://shineberg.com/agent): contact Sharon's agent or connect your agent to his
+- [About](https://shineberg.com/about): background
+- [lonoda](https://shineberg.com/lonoda): projects
+- [Blog](https://shineberg.com/blog): writing
+
+## For agents
+
+- [Agent card](https://shineberg.com/.well-known/agent-card.json): A2A-style card with skills and contact details (static; no live endpoint yet)
+
+## Elsewhere
+
+- [Reef TRH](https://reeftrh.com): AI strategy and execution for companies - diagnosis first, then systems that deliver return
+- [The Last Founder](https://thelastfounder.com): podcast - entrepreneurship in the age of agents
+- [LinkedIn](https://www.linkedin.com/in/sharonshineberg/)
+- [Facebook](https://www.facebook.com/shinebergsharon)

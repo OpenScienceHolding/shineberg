@@ -46,14 +46,9 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20">
-            <a
-              href="https://calendly.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
-            >
-              Let's Talk
-            </a>
+            <Link href="/agent" className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition">
+              Talk to my agent
+            </Link>
             <Link
               href="/about"
               className="inline-block px-8 py-3 border border-ink text-ink text-sm font-medium hover:opacity-60 transition"
@@ -181,14 +176,9 @@ export default function Home() {
           <p className="text-xl text-body mb-12">
             Let's talk about your vision and what's possible.
           </p>
-          <a
-            href="https://calendly.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
-          >
-            Book a Free Call
-          </a>
+          <Link href="/agent" className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition">
+              Talk to my agent
+            </Link>
         </div>
       </section>
 
