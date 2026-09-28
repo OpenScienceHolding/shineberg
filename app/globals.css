@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
+/* Brand color tokens (Tailwind v4 does not read tailwind.config.ts without @config). */
+@theme {
+  --color-paper: #f5f0e8;
+  --color-paper-2: #efe9de;
+  --color-paper-tint: #e4e0d9;
+  --color-ink: #111111;
+  --color-body: #727170;
+  --color-muted: #9f9f9e;
+  --color-line: #dcd6ca;
+}
+
 * {
   margin: 0;
   padding: 0;
