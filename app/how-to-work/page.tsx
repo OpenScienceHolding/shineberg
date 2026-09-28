@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "Work With Me | Sharon Shineberg",
   description:
     "How Sharon Shineberg communicates, decides and works - and the ways to work together: join a venture, build something new, or bring him into yours.",
+  openGraph: {
+    title: "Work With Me | Sharon Shineberg",
+    description:
+      "How Sharon Shineberg communicates, decides and works - and the ways to work together: join a venture, build something new, or bring him into yours.",
+    url: "https://shineberg.com/how-to-work",
+  },
 };
 
 const principles: { title: string; points: string[] }[] = [

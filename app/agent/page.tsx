@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "Talk to my agent | Sharon Shineberg",
   description:
     "The fastest way to reach Sharon Shineberg - advisor and companion to ventures from day one - is through his agent: fit check, scheduling, and routing to Reef TRH.",
+  openGraph: {
+    title: "Talk to my agent | Sharon Shineberg",
+    description:
+      "The fastest way to reach Sharon Shineberg - advisor and companion to ventures from day one - is through his agent: fit check, scheduling, and routing to Reef TRH.",
+    url: "https://shineberg.com/agent",
+  },
 };
 
 export default function Agent() {
@@ -47,15 +53,15 @@ export default function Agent() {
         <h2 className="text-3xl font-bold mb-6">What my agent can help with</h2>
         <ul className="text-lg text-body mb-16 space-y-3 list-disc">
           <li>
-            <strong className="text-ink">Fit check</strong> - whether working
+            <strong className="text-ink">Fit check</strong>{" "}- whether working
             together makes sense, and in what shape.
           </li>
           <li>
-            <strong className="text-ink">Scheduling</strong> - finding a time
+            <strong className="text-ink">Scheduling</strong>{" "}- finding a time
             that works, without the back-and-forth.
           </li>
           <li>
-            <strong className="text-ink">Routing</strong> - companies looking
+            <strong className="text-ink">Routing</strong>{" "}- companies looking
             for AI strategy and execution go to{" "}
             <a
               href="https://reeftrh.com"

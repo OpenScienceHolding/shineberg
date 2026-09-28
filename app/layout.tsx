@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     title: "Sharon Shineberg | Advisor & companion to ventures from day one",
     description:
       "Direct talk, defined scope, real partnership. I move fast when the plan is concrete.",
-    url: "https://shineberg.com",
   },
   twitter: { card: "summary_large_image" },
 };
