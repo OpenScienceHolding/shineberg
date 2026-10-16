@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
-
-const BASE = "https://shineberg.com";
+import { getPublishedPosts } from "./lib/posts";
+import { SITE_URL } from "./lib/site";
 
 // /weloveluka is intentionally excluded (noindex).
 const routes = [
@@ -11,9 +11,9 @@ const routes = [
   "/about",
   "/lonoda",
   "/blog",
-  "/blog/lezel-cannabis-ai",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({ url: `${BASE}${route}` }));
+  const posts = getPublishedPosts().map((post) => `/blog/${post.slug}`);
+  return [...routes, ...posts].map((route) => ({ url: `${SITE_URL}${route}` }));
 }
