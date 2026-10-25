@@ -1,16 +1,49 @@
+import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+import { formatPostDate, getPublishedPosts } from "../lib/posts";
+import { SITE_URL } from "../lib/site";
+
+const blogTitle = "Blog | Sharon Shineberg";
+const blogDescription =
+  "Thoughts on building, innovation, agents, and the projects in lonoda.";
+
+export async function generateMetadata(
+  _: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const parentMeta = await parent;
+  return {
+    title: blogTitle,
+    description: blogDescription,
+    openGraph: {
+      title: blogTitle,
+      description: blogDescription,
+      url: `${SITE_URL}/blog`,
+      images: parentMeta.openGraph?.images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blogTitle,
+      description: blogDescription,
+      images: parentMeta.twitter?.images,
+    },
+  };
+}
 
 export default function Blog() {
-  const posts = [
-    {
-      href: "/blog/lezel-cannabis-ai",
-      title: "lezel: From Cannabis Research to AI-Powered Personalization",
-      excerpt:
-        "In 2019, I was asked to research cannabis. What I discovered became a 6-year journey into building a company that uses AI to help people personalize their own use.",
-      date: "June 2026",
-      category: "Projects",
-    },
+  const posts = getPublishedPosts().map((post) => ({
+    href: `/blog/${post.slug}`,
+    title: post.title,
+    excerpt: post.description,
+    date: formatPostDate(post.date),
+    category: post.category,
+  }));
+
+  // Standalone page, not a blog post. Kept on the index so this card stays.
+  const cards = [
+    ...posts,
     {
       href: "/guide",
       title: "המדריך: איך לחבר את Instinct ל-WhatsApp ולכספת Obsidian",
@@ -23,25 +56,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-paper text-ink font-serif">
-      <nav className="flex justify-between items-center gap-4 px-6 md:px-8 py-6 border-b border-ink">
-        <Link href="/" className="text-sm font-semibold hover:opacity-60">
-          Sharon Shineberg
-        </Link>
-        <div className="flex flex-wrap justify-end gap-x-4 gap-y-1 md:gap-8 text-sm whitespace-nowrap">
-          <Link href="/about" className="hover:opacity-60">
-            About
-          </Link>
-          <Link href="/how-to-work" className="hover:opacity-60">
-            Work With Me
-          </Link>
-          <Link href="/lonoda" className="hover:opacity-60">
-            lonoda
-          </Link>
-          <Link href="/blog" className="hover:opacity-60">
-            Blog
-          </Link>
-        </div>
-      </nav>
+      <Nav />
 
       <section className="px-8 py-24 max-w-4xl mx-auto">
         <h1 className="text-5xl font-bold mb-4">Blog</h1>
@@ -50,15 +65,17 @@ export default function Blog() {
         </p>
 
         <div className="space-y-12">
-          {posts.map((post, idx) => (
+          {cards.map((post) => (
             <div
-              key={idx}
+              key={post.href}
               className="pb-12 border-b border-line last:border-b-0"
             >
               <div className="mb-3">
-                <span className="text-xs uppercase tracking-wide text-muted">
-                  {post.category}
-                </span>
+                {post.category ? (
+                  <span className="text-xs uppercase tracking-wide text-muted">
+                    {post.category}
+                  </span>
+                ) : null}
                 <p className="text-xs text-muted mt-1">{post.date}</p>
               </div>
               <h2 className="text-2xl font-bold mb-3">{post.title}</h2>
