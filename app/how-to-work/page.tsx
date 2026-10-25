@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { TrackedLink } from "../components/TrackedLink";
 import {
   offerById,
   situations,
@@ -246,16 +247,23 @@ export default function WorkWithMe() {
             <p className="text-lg text-body mb-2">Already in touch? WhatsApp is fastest.</p>
             <p className="text-lg text-body mb-10">
               Formal:{" "}
-              <a href="mailto:sharon@shineberg.com" className={linkClass}>
+              <TrackedLink
+                href="mailto:sharon@shineberg.com"
+                className={linkClass}
+                event="contact_click"
+                params={{ method: "email", location: "how_to_work" }}
+              >
                 sharon@shineberg.com
-              </a>
+              </TrackedLink>
             </p>
-            <Link
+            <TrackedLink
               href="/agent"
               className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
+              event="contact_click"
+              params={{ method: "agent_page", location: "how_to_work" }}
             >
               Talk to my agent
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>

@@ -29,6 +29,17 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Analytics
+
+Set these in the Vercel project for Production, then redeploy. The site builds when they are missing. Do not commit real IDs.
+
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_GA_ID` | GA4 measurement ID, such as `G-XXXXXXXX` |
+| `NEXT_PUBLIC_GSC_VERIFICATION` | Search Console meta-tag `content` value only |
+
+See `.env.example`. In the Vercel dashboard, also turn on Web Analytics and Speed Insights. After Search Console verifies the site, submit `https://shineberg.com/sitemap.xml`.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

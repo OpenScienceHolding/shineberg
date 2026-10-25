@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Footer from "../components/Footer";
+import { TrackedLink } from "../components/TrackedLink";
 
 export default function About() {
   return (
@@ -110,15 +111,15 @@ export default function About() {
 
             {/* Philosophy */}
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold">What I've Learned</h2>
+              <h2 className="text-3xl font-bold">What I&apos;ve Learned</h2>
               <p>
                 The pattern across all these ventures: the best breakthroughs
-                happen at the edge of what's unknown. That's why I call my
-                portfolio <strong>"lonoda"</strong>—a place where you enter a
-                place you don't know what will happen there, and you dive in.
+                happen at the edge of what&apos;s unknown. That&apos;s why I call my
+                portfolio <strong>&quot;lonoda&quot;</strong>—a place where you enter a
+                place you don&apos;t know what will happen there, and you dive in.
               </p>
               <p>
-                I'm obsessed with finding signals in noise, understanding what's
+                I&apos;m obsessed with finding signals in noise, understanding what&apos;s
                 emerging before it becomes obvious, and building systems that
                 actually work—not just theories.
               </p>
@@ -126,7 +127,7 @@ export default function About() {
 
             {/* Current Work */}
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold">What I'm Building Now</h2>
+              <h2 className="text-3xl font-bold">What I&apos;m Building Now</h2>
               <p>
                 <a
                   href="https://reeftrh.com"
@@ -165,7 +166,7 @@ export default function About() {
               <ul className="space-y-2 ml-6">
                 <li>✓ Are comfortable with ambiguity and uncertainty</li>
                 <li>✓ Think in systems, not just tactics</li>
-                <li>✓ Want to understand the "why" before execution</li>
+                <li>✓ Want to understand the &quot;why&quot; before execution</li>
                 <li>✓ Are ready to move fast and iterate</li>
                 <li>
                   ✓ Believe AI is a tool for strategy, not just automation
@@ -175,12 +176,14 @@ export default function About() {
           </div>
 
           <div className="mt-16 pt-8 border-t border-line text-center">
-            <Link
+            <TrackedLink
               href="/how-to-work"
               className="text-ink font-medium hover:opacity-60"
+              event="contact_click"
+              params={{ method: "work_with_me", location: "about" }}
             >
-              → Let's work together
-            </Link>
+              → Let&apos;s work together
+            </TrackedLink>
           </div>
         </div>
       </section>
