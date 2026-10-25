@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Footer from "../components/Footer";
+import { TrackedLink } from "../components/TrackedLink";
 
 export default function Lonoda() {
   const projects = [
@@ -125,12 +126,14 @@ export default function Lonoda() {
               >
                 Facebook
               </a>
-              <a
+              <TrackedLink
                 href="mailto:sharon@shineberg.com"
                 className="text-ink font-medium hover:opacity-60"
+                event="contact_click"
+                params={{ method: "email", location: "lonoda" }}
               >
                 Email
-              </a>
+              </TrackedLink>
             </div>
           </div>
         </div>

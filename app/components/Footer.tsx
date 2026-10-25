@@ -1,3 +1,5 @@
+import { TrackedLink } from "./TrackedLink";
+
 export default function Footer() {
   return (
     <footer className="px-8 py-8 border-t border-line">
@@ -28,12 +30,14 @@ export default function Footer() {
           >
             Facebook
           </a>
-          <a
+          <TrackedLink
             href="mailto:sharon@shineberg.com"
             className="hover:opacity-60 transition"
+            event="contact_click"
+            params={{ method: "email", location: "footer" }}
           >
             Email
-          </a>
+          </TrackedLink>
         </div>
       </div>
     </footer>

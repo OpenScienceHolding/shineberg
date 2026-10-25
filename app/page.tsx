@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Footer from "./components/Footer";
+import { TrackedLink } from "./components/TrackedLink";
 
 export default function Home() {
   return (
@@ -49,12 +50,14 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20">
-            <Link
+            <TrackedLink
               href="/how-to-work"
               className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
+              event="contact_click"
+              params={{ method: "work_with_me", location: "home" }}
             >
               Work with me
-            </Link>
+            </TrackedLink>
             <a
               href="https://reeftrh.com"
               target="_blank"
@@ -75,7 +78,7 @@ export default function Home() {
       {/* Intro Section */}
       <section className="px-8 py-24 flex justify-center text-center">
         <p className="text-xl text-body mb-12 max-w-2xl leading-relaxed">
-          Over the past decade, I've worked with founders, teams, and executives
+          Over the past decade, I&apos;ve worked with founders, teams, and executives
           navigating uncertainty. I combine strategic analysis with hands-on
           building to help you see the full picture and move forward with
           confidence.
@@ -131,7 +134,7 @@ export default function Home() {
       <section className="px-8 py-24 flex justify-center text-center">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-widest text-muted mb-16">
-            What I'm Building
+            What I&apos;m Building
           </p>
 
           <div className="space-y-8 mb-12">
@@ -203,9 +206,14 @@ export default function Home() {
           <p className="text-xl text-body mb-12">
             The fastest way to reach me is through my agent.
           </p>
-          <Link href="/agent" className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition">
-              Talk to my agent
-            </Link>
+          <TrackedLink
+            href="/agent"
+            className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
+            event="contact_click"
+            params={{ method: "agent_page", location: "home" }}
+          >
+            Talk to my agent
+          </TrackedLink>
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { TrackedLink } from "../components/TrackedLink";
 import { AGENT_EMAIL, AGENT_MAILTO, TRUSTED_PEOPLE_URL } from "../lib/contact";
 
 export const metadata: Metadata = {
@@ -30,20 +31,24 @@ export default function Agent() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
-          <a
+          <TrackedLink
             href={AGENT_MAILTO}
             className="inline-block text-center px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
+            event="contact_click"
+            params={{ method: "agent_email", location: "agent" }}
           >
             Talk to my agent
-          </a>
-          <a
+          </TrackedLink>
+          <TrackedLink
             href={TRUSTED_PEOPLE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-center px-8 py-3 border border-ink text-ink text-sm font-medium hover:opacity-60 transition"
+            event="contact_click"
+            params={{ method: "agent_connect", location: "agent" }}
           >
             Connect your agent to mine
-          </a>
+          </TrackedLink>
         </div>
         <p className="text-sm text-muted mb-20">
           Or write directly to{" "}
@@ -88,12 +93,14 @@ export default function Agent() {
         <h2 className="text-3xl font-bold mb-6">Prefer a human path?</h2>
         <p className="text-lg text-body">
           Already in touch? WhatsApp is fastest. Formal:{" "}
-          <a
+          <TrackedLink
             href="mailto:sharon@shineberg.com"
             className="underline hover:opacity-60"
+            event="contact_click"
+            params={{ method: "email", location: "agent" }}
           >
             sharon@shineberg.com
-          </a>
+          </TrackedLink>
           .
         </p>
       </section>
