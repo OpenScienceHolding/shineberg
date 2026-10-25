@@ -257,6 +257,14 @@ export default function WorkWithMe() {
               </TrackedLink>
             </p>
             <TrackedLink
+              href="/book"
+              className="inline-block px-8 py-3 mr-4 mb-4 border border-ink text-sm font-medium hover:bg-ink hover:text-paper transition"
+              event="contact_click"
+              params={{ method: "booking", location: "how_to_work" }}
+            >
+              Book a meeting
+            </TrackedLink>
+            <TrackedLink
               href="/agent"
               className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
               event="contact_click"

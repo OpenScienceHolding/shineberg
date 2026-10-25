@@ -36,6 +36,7 @@ The fastest way to reach Sharon is through his agent (email: ec2tee@mail.instinc
 - [About](${SITE_URL}/about): background
 - [lonoda](${SITE_URL}/lonoda): projects
 - [Blog](${SITE_URL}/blog): writing
+- [Book a meeting](${SITE_URL}/book): schedule a 20-minute intro, a 45-minute working session, or a Reef TRH diagnosis scoping call
 ${postBlock}
 ## For agents
 

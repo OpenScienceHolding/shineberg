@@ -11,6 +11,7 @@ const routes = [
   "/about",
   "/lonoda",
   "/blog",
+  "/book",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

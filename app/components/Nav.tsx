@@ -19,6 +19,9 @@ export default function Nav() {
         <Link href="/blog" className="hover:opacity-60">
           Blog
         </Link>
+        <Link href="/book" className="hover:opacity-60">
+          Book
+        </Link>
       </div>
     </nav>
   );
