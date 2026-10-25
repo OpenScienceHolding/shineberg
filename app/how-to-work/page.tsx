@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import {
+  offerById,
+  situations,
+  workWithMeJsonLd,
+} from "../lib/work-with-me";
 
 export const metadata: Metadata = {
   title: "Work With Me | Sharon Shineberg",
@@ -75,6 +80,12 @@ const linkClass = "underline hover:opacity-60";
 export default function WorkWithMe() {
   return (
     <div className="min-h-screen bg-paper text-ink font-serif">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(workWithMeJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Nav />
 
       <section className="px-8 py-24 flex justify-center">
@@ -99,13 +110,43 @@ export default function WorkWithMe() {
             ))}
           </div>
 
+          <div
+            id="situations"
+            className="border-t border-line pt-16 mb-20 scroll-mt-8"
+          >
+            <h2 className="text-4xl font-bold mb-10">Situations I help with</h2>
+
+            <div>
+              {situations.map((situation) => {
+                const offer = offerById(situation.offerId);
+                return (
+                  <div
+                    key={situation.quote}
+                    className="mb-12 pb-8 border-b border-line last:mb-0 last:border-b-0 last:pb-0"
+                  >
+                    <p className="text-2xl font-bold italic mb-3">
+                      &ldquo;{situation.quote}&rdquo;
+                    </p>
+                    <p className="text-lg text-body mb-4">{situation.does}</p>
+                    <a href={`#${offer.id}`} className={linkClass}>
+                      {offer.name} →
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
           <div className="border-t border-line pt-16 mb-20">
             <h2 className="text-4xl font-bold mb-10">
               Ways we can work together
             </h2>
 
             <div className="mb-12 pb-8 border-b border-line">
-              <h3 className="text-2xl font-bold mb-3">
+              <h3
+                id="join-a-venture"
+                className="text-2xl font-bold mb-3 scroll-mt-8"
+              >
                 1. Join one of my ventures
               </h3>
               <p className="text-lg text-body">
@@ -139,7 +180,10 @@ export default function WorkWithMe() {
             </div>
 
             <div className="mb-12 pb-8 border-b border-line">
-              <h3 className="text-2xl font-bold mb-3">
+              <h3
+                id="build-something-new"
+                className="text-2xl font-bold mb-3 scroll-mt-8"
+              >
                 2. Build something new together
               </h3>
               <p className="text-lg text-body">
@@ -150,7 +194,10 @@ export default function WorkWithMe() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-3">
+              <h3
+                id="join-your-venture"
+                className="text-2xl font-bold mb-3 scroll-mt-8"
+              >
                 3. I join your venture
               </h3>
               <p className="text-lg text-body">
