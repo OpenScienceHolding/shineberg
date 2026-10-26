@@ -16,3 +16,9 @@ const body = [
 export const AGENT_MAILTO = `mailto:${AGENT_EMAIL}?subject=${encodeURIComponent(
   subject,
 )}&body=${encodeURIComponent(body)}`;
+
+/** Agent mailto with the visitor's opening line pre-filled. */
+export const agentMailto = (opening: string) =>
+  `mailto:${AGENT_EMAIL}?subject=${encodeURIComponent(
+    subject,
+  )}&body=${encodeURIComponent(`Hi,\n\n${opening}\n`)}`;

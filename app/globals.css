@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 
 /* Brand color tokens (Tailwind v4 does not read tailwind.config.ts without @config). */
@@ -11,6 +11,21 @@
   --color-muted: #9f9f9e;
   --color-line: #dcd6ca;
 
+  /* Night palette: the dark homepage. */
+  --color-night: #0e0f0c;
+  --color-night-2: #121410;
+  --color-night-card: #161814;
+  --color-night-line: #2a2d26;
+  --color-night-edge: #3a3e35;
+  --color-bone: #eceae3;
+  --color-bone-2: #c9c7bf;
+  --color-fog: #a3a399;
+  --color-lime: #d4ff3a;
+  --color-ember: #ff8a5b;
+
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Hanken Grotesk", system-ui, sans-serif;
 }
@@ -69,5 +84,19 @@
 
   li {
     margin-bottom: 0.5rem;
+  }
+
+  /* Dark pages: undo the paper-theme prose defaults above. */
+  .theme-night h1,
+  .theme-night h2,
+  .theme-night h3,
+  .theme-night p,
+  .theme-night ol,
+  .theme-night ul,
+  .theme-night li,
+  .theme-night blockquote,
+  .theme-night dd {
+    margin: 0;
+    font-family: inherit;
   }
 }
