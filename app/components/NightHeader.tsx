@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { TrackedLink } from "./TrackedLink";
 
+function agentLocation(current?: string) {
+  if (current === "/strategy") return "strategy_nav";
+  if (!current || current === "/") return "home_nav";
+  return `${current.replace(/^\//, "").replaceAll("/", "_")}_nav`;
+}
+
 const links = [
   { href: "/about", label: "About" },
   { href: "/strategy", label: "Strategy" },
@@ -42,7 +48,7 @@ export function NightHeader({ current }: { current?: string }) {
             event="contact_click"
             params={{
               method: "agent_page",
-              location: current === "/strategy" ? "strategy_nav" : "home_nav",
+              location: agentLocation(current),
             }}
           >
             <span

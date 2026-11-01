@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import { NightShell } from "../components/NightShell";
 
 export const metadata: Metadata = {
   title:
@@ -18,20 +17,32 @@ export const metadata: Metadata = {
 const INVITE_URL = "https://app.instinct.com/invite?t=shineberg-site";
 
 function H2({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-3xl font-bold mt-16 mb-6">{children}</h2>;
+  return (
+    <h2 className="font-display font-semibold text-[32px] leading-[1.2] tracking-[-0.02em] text-bone mt-16 mb-6">
+      {children}
+    </h2>
+  );
 }
 
 function H3({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-2xl font-bold mt-10 mb-4">{children}</h3>;
+  return (
+    <h3 className="font-display font-semibold text-2xl leading-[1.25] text-bone mt-10 mb-4">
+      {children}
+    </h3>
+  );
 }
 
 function H4({ children }: { children: React.ReactNode }) {
-  return <h4 className="text-xl font-bold mt-8 mb-3">{children}</h4>;
+  return (
+    <h4 className="font-display font-semibold text-xl text-bone mt-8 mb-3">
+      {children}
+    </h4>
+  );
 }
 
 function List({ children }: { children: React.ReactNode }) {
   return (
-    <ul className="text-lg text-body list-disc ps-6 ms-0 space-y-2 mb-6">
+    <ul className="text-lg text-bone-2 list-disc ps-6 ms-0 space-y-2 mb-6">
       {children}
     </ul>
   );
@@ -40,8 +51,8 @@ function List({ children }: { children: React.ReactNode }) {
 function Prompt({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <div className="my-4">
-      <p className="text-sm font-semibold text-ink mb-2">ל-{to}:</p>
-      <blockquote className="border-s-2 border-ink bg-paper-2 px-5 py-4 text-lg text-body">
+      <p className="text-sm font-semibold text-bone mb-2">ל-{to}:</p>
+      <blockquote className="border-s-2 border-lime bg-night-card px-5 py-4 text-lg text-bone-2">
         {children}
       </blockquote>
     </div>
@@ -50,7 +61,7 @@ function Prompt({ to, children }: { to: string; children: React.ReactNode }) {
 
 function Ltr({ children }: { children: React.ReactNode }) {
   return (
-    <span dir="ltr" className="font-mono text-base">
+    <span dir="ltr" className="font-mono text-[0.95em] text-bone">
       {children}
     </span>
   );
@@ -101,38 +112,37 @@ const systems: [string, string, string][] = [
 
 export default function Guide() {
   return (
-    <div className="min-h-screen bg-paper text-ink font-serif">
-      <Nav />
-
+    <NightShell current="/guide">
       <article
         lang="he"
         dir="rtl"
-        className="px-8 py-24 max-w-3xl mx-auto font-sans"
+        className="night-copy max-w-[1240px] mx-auto px-6 py-20"
       >
+        <div className="max-w-[760px]">
         <p
           dir="ltr"
           lang="en"
-          className="text-sm text-muted text-left mb-12 font-serif italic"
+          className="text-sm text-fog text-left mb-12"
         >
           Note for English readers: this guide is written in Hebrew. It walks
           you step by step through connecting Instinct to WhatsApp and an
           Obsidian vault, so you can build this setup yourself.
         </p>
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+        <h1 className="font-display font-extrabold text-[clamp(36px,5vw,60px)] leading-[1.05] tracking-[-0.03em] text-bone mb-4">
           איך לחבר את Instinct ל-WhatsApp ולכספת Obsidian
         </h1>
-        <p className="text-lg text-muted mb-12">מדריך פתוח להקמה עצמית</p>
+        <p className="text-lg text-fog mb-12">מדריך פתוח להקמה עצמית</p>
 
         <H2>1. מה זה Instinct</H2>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           Instinct הוא עוזר אישי שמבין על מה אתה עובד ומה חשוב לך. מדברים איתו
           בהודעות (WhatsApp או iMessage) או בשיחת טלפון, בלי אפליקציה חדשה
           ללמוד. אחרי שמחברים לו חשבונות (Gmail, יומן Google, Google Drive
           ועוד), הוא יכול לקרוא, לחפש, להכין טיוטות ולבצע משימות בשבילך, ולחזור
           אליך מיוזמתו כשמשהו דורש תשומת לב.
         </p>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           הנקודה החשובה למדריך הזה: Instinct לא יושב על המחשב שלך. הוא עובד מול
           שירותי ענן. לכן כל מה שחי רק במק (היסטוריית WhatsApp, משימות, פתקים)
           צריך להגיע קודם לתיקייה בענן, ומשם הוא קורא.
@@ -200,7 +210,7 @@ export default function Guide() {
         </List>
 
         <H2>4. לעבוד במקביל עם Claude ומודלים אחרים</H2>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           הכספת היא שכבה משותפת. Instinct עובד מול העותק שלה ב-Drive, ו-Claude
           (למשל Claude Code על המק) עובד מול אותה תיקייה מקומית. כל מודל אחר
           שיודע לקרוא קבצים יכול להצטרף.
@@ -224,7 +234,7 @@ export default function Guide() {
         </List>
 
         <H2>5. פרוטוקולי תיעוד - כך כל הסוכנים נשארים מסונכרנים</H2>
-        <p className="text-lg text-body">שלושה רכיבים עושים את העבודה:</p>
+        <p className="text-lg leading-[1.75] text-bone-2">שלושה רכיבים עושים את העבודה:</p>
         <List>
           <li>
             <strong>
@@ -263,9 +273,9 @@ export default function Guide() {
 
         <H2>6. מה זה כל מערכת</H2>
         <div className="overflow-x-auto mb-6">
-          <table className="w-full text-base text-body border-collapse">
+          <table className="w-full text-base text-bone-2 border-collapse">
             <thead>
-              <tr className="border-b-2 border-ink text-ink text-start">
+              <tr className="border-b-2 border-night-edge text-bone text-start">
                 <th className="py-3 pe-4 text-start">מערכת</th>
                 <th className="py-3 pe-4 text-start">מה היא</th>
                 <th className="py-3 text-start">התפקיד שלה כאן</th>
@@ -273,8 +283,8 @@ export default function Guide() {
             </thead>
             <tbody>
               {systems.map(([name, what, role]) => (
-                <tr key={name} className="border-b border-line align-top">
-                  <td className="py-3 pe-4 font-semibold text-ink whitespace-nowrap">
+                <tr key={name} className="border-b border-night-line align-top">
+                  <td className="py-3 pe-4 font-semibold text-bone whitespace-nowrap">
                     {name}
                   </td>
                   <td className="py-3 pe-4">{what}</td>
@@ -286,7 +296,7 @@ export default function Guide() {
         </div>
 
         <H2>7. שלבים ופרומפטים</H2>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           הפרומפטים כאן הם נקודת התחלה. כדאי להתאים אותם לשמות התיקיות שלך.
         </p>
 
@@ -319,7 +329,7 @@ export default function Guide() {
         </Prompt>
 
         <H3>שלב 3: חיבור Instinct ל-WhatsApp</H3>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           השיטה לחבר את Instinct ל-WhatsApp: מבקשים מה-Instinct שלך להתחבר
           ל-WhatsApp, הוא מציג קוד QR, ואתה סורק אותו עם הטלפון.
         </p>
@@ -327,10 +337,10 @@ export default function Guide() {
           &quot;תתחבר ל-WhatsApp שלי. תציג לי קוד QR ואני אסרוק אותו עם
           הטלפון.&quot;
         </Prompt>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           אחרי הסריקה Instinct מחובר ל-WhatsApp שלך.
         </p>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           אופציונלי - ייצוא היסטוריית הצ&apos;אטים לכספת, לשימוש בכרטיסי אנשים
           ובחיפוש בארכיון:
         </p>
@@ -384,7 +394,7 @@ export default function Guide() {
         </Prompt>
 
         <H2>8. החלק הטכני: מתכון לסנכרונים</H2>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           כך בונים את שלושת הסנכרונים. הקוד עצמו פשוט, ואפשר לבקש מ-Claude לכתוב
           אותו לפי התיאור כאן (הפרומפטים בפרק 7).
         </p>
@@ -433,18 +443,18 @@ export default function Guide() {
           <li>כדאי שיהיה מצב dry-run (הצגה בלי כתיבה) ומצב ייצוא מחדש מלא.</li>
         </List>
         <H4>הצפנה והרשאות</H4>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           ההצפנה של WhatsApp היא בתעבורה (end-to-end). על המק עצמו, אפליקציית
           WhatsApp שומרת את ההיסטוריה בקובץ SQLite רגיל, בתיקייה:
         </p>
         <p
           dir="ltr"
-          className="font-mono text-sm bg-paper-2 px-4 py-3 mb-4 text-left break-all"
+          className="font-mono text-sm text-bone bg-night-card border border-night-line rounded-xl px-4 py-3 mb-4 text-left break-all"
         >
           ~/Library/Group
           Containers/group.net.whatsapp.WhatsApp.shared/ChatStorage.sqlite
         </p>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           macOS חוסם גישה לתיקייה הזו מאפליקציות אחרות. לכן התהליך שמריץ את
           הסקריפט (Terminal, או python3) צריך Full Disk Access ב-System Settings
           ← Privacy &amp; Security. בגרסאות ישנות של האפליקציה הנתיב היה אחר
@@ -452,7 +462,7 @@ export default function Guide() {
           איפה הקובץ נמצא אצלך.
         </p>
         <H4>מה בונים מעל</H4>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           Instinct קורא את קבצי ה-WhatsApp בכספת (קריאה בלבד), בונה מהם כרטיסי
           אנשים בתיקייה נפרדת (למשל <Ltr>People/CRM/</Ltr>), ומשתמש בהם כדי לדעת
           מי מחכה לתשובה. את קבצי המקור ב-<Ltr>WhatsApp/</Ltr>{" "}לא עורכים אף פעם.
@@ -490,7 +500,7 @@ export default function Guide() {
         </List>
 
         <H3>ד. Workflowy ← הכספת</H3>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           העיקרון זהה: להביא את התוכן לקובץ בתיקייה שמסתנכרנת ל-Drive,
           ו-Instinct קורא משם. יש שלוש דרכים, מהפשוטה לאוטומטית:
         </p>
@@ -543,14 +553,14 @@ export default function Guide() {
         </List>
 
         <H2>9. חיבור בין סוכנים (Instinct ל-Instinct)</H2>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           עד כאן דיברנו על הסוכן שלך. אבל אם גם לחבר שלך יש Instinct, שני
           הסוכנים יכולים להתחבר זה לזה ולעבוד יחד, בלי שאתם צריכים להיות
           המתווכים.
         </p>
 
         <H3>מה זה</H3>
-        <p className="text-lg text-body">
+        <p className="text-lg leading-[1.75] text-bone-2">
           חיבור מהימן (Trusted people) הוא קשר בין הסוכן שלך לסוכן של אדם אחר.
           אחרי שהחיבור מאושר משני הצדדים, הסוכנים יכולים להעביר ביניהם הודעות
           ולתאם דברים בשמכם. החיבור עצמו הוא רק ערוץ תקשורת: הוא לא נותן לאף צד
@@ -633,9 +643,11 @@ export default function Guide() {
           מותר], ובכל דבר אחר תשאל אותי קודם.&quot;
         </Prompt>
 
-        <div className="mt-20 pt-12 border-t border-line text-center">
-          <h2 className="text-3xl font-bold mb-6">רוצה להתחיל?</h2>
-          <p className="text-lg text-body mb-8">
+        <div className="mt-20 pt-12 border-t border-night-line text-center">
+          <h2 className="font-display font-semibold text-[32px] leading-[1.2] text-bone mb-6">
+            רוצה להתחיל?
+          </h2>
+          <p className="text-lg leading-[1.75] text-bone-2 mb-8">
             אם המדריך עזר לך ואתה רוצה לנסות את Instinct בעצמך, הנה קישור הזמנה
             אישי שלי:
           </p>
@@ -643,17 +655,16 @@ export default function Guide() {
             href={INVITE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition mb-8"
+            className="inline-flex items-center justify-center min-h-[52px] px-7 rounded-full bg-lime text-night text-sm font-semibold hover:opacity-90 transition mb-8"
           >
             הצטרפות ל-Instinct
           </a>
-          <p className="text-lg text-body">
+          <p className="text-lg leading-[1.75] text-bone-2">
             ואם נתקעת בשלב מסוים - מוזמן לכתוב לי.
           </p>
         </div>
+        </div>
       </article>
-
-      <Footer />
-    </div>
+    </NightShell>
   );
 }

@@ -2,8 +2,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Footer from "../../components/Footer";
-import Nav from "../../components/Nav";
+import { NightShell } from "../../components/NightShell";
 import { postMdxComponents } from "../../lib/post-mdx";
 import { formatPostDate, getPublishedPost, getPublishedPosts } from "../../lib/posts";
 import { SITE_URL } from "../../lib/site";
@@ -59,18 +58,19 @@ export default async function BlogPost({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-paper text-ink font-serif">
-      <Nav />
-
-      <article className="px-8 py-24 max-w-3xl mx-auto">
-        <div className="mb-12">
+    <NightShell current="/blog">
+      <article className="max-w-[1240px] mx-auto px-6 py-20">
+        <div className="max-w-[760px]">
+        <div className="mb-12 flex flex-col gap-4">
           {post.category ? (
-            <p className="text-sm uppercase tracking-wide text-muted mb-2">
+            <p className="font-mono text-xs uppercase tracking-[0.12em] text-lime">
               {post.category}
             </p>
           ) : null}
-          <h1 className="text-5xl font-bold mb-4">{post.title}</h1>
-          <div className="flex gap-6 text-sm text-muted">
+          <h1 className="font-display font-extrabold text-[clamp(40px,5vw,64px)] leading-[1.02] tracking-[-0.03em]">
+            {post.title}
+          </h1>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-fog">
             <span>{formatPostDate(post.date)}</span>
             {post.link ? (
               <>
@@ -80,7 +80,7 @@ export default async function BlogPost({
                     href={post.link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline"
+                    className="text-bone underline decoration-night-edge underline-offset-4 hover:decoration-lime"
                   >
                     {post.link.label}
                   </a>
@@ -90,7 +90,7 @@ export default async function BlogPost({
           </div>
         </div>
 
-        <div className="prose prose-lg max-w-none text-body space-y-6">
+        <div className="night-copy text-[18px] leading-[1.75]">
           <MDXRemote
             source={post.content}
             components={postMdxComponents}
@@ -100,14 +100,16 @@ export default async function BlogPost({
           />
         </div>
 
-        <div className="mt-16 pt-8 border-t border-line">
-          <Link href="/blog" className="text-ink underline hover:opacity-60">
+        <div className="mt-16 pt-8 border-t border-night-line">
+          <Link
+            href="/blog"
+            className="text-bone font-medium border-b border-night-edge hover:border-lime"
+          >
             ← Back to Blog
           </Link>
         </div>
+        </div>
       </article>
-
-      <Footer />
-    </div>
+    </NightShell>
   );
 }

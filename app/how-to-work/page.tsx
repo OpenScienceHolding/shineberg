@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import { NightShell } from "../components/NightShell";
 import { TrackedLink } from "../components/TrackedLink";
 import {
   offerById,
@@ -76,24 +75,26 @@ const principles: { title: string; points: string[] }[] = [
   },
 ];
 
-const linkClass = "underline hover:opacity-60";
+const linkClass =
+  "text-bone underline decoration-night-edge underline-offset-4 hover:decoration-lime";
 
 export default function WorkWithMe() {
   return (
-    <div className="min-h-screen bg-paper text-ink font-serif">
+    <NightShell current="/how-to-work">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(workWithMeJsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <Nav />
 
-      <section className="px-8 py-24 flex justify-center">
-        <div className="max-w-2xl w-full">
-          <h1 className="text-6xl font-bold mb-8 text-center">Work With Me</h1>
-          <p className="text-xl text-body text-center mb-20 leading-relaxed">
-            <strong className="text-ink">TLDR:</strong>{" "}I&apos;m an advisor and
+      <section className="max-w-[1240px] mx-auto px-6 py-20">
+        <div className="max-w-[760px] w-full">
+          <h1 className="font-display font-extrabold text-[clamp(48px,6vw,76px)] leading-[0.98] tracking-[-0.03em] mb-8">
+            Work With Me
+          </h1>
+          <p className="text-xl text-bone-2 mb-20 leading-relaxed">
+            <strong className="text-bone">TLDR:</strong>{" "}I&apos;m an advisor and
             companion to ventures from day one. Direct talk, defined scope, real
             partnership. I move fast when the plan is concrete.
           </p>
@@ -101,8 +102,10 @@ export default function WorkWithMe() {
           <div className="space-y-14 mb-20">
             {principles.map((p) => (
               <div key={p.title}>
-                <h2 className="text-3xl font-bold mb-4">{p.title}</h2>
-                <ul className="text-lg text-body space-y-2 list-disc">
+                <h2 className="font-display font-semibold text-[32px] leading-[1.15] tracking-[-0.02em] mb-4">
+                  {p.title}
+                </h2>
+                <ul className="text-lg text-bone-2 space-y-2 list-disc ps-6">
                   {p.points.map((point) => (
                     <li key={point}>{point}</li>
                   ))}
@@ -113,9 +116,11 @@ export default function WorkWithMe() {
 
           <div
             id="situations"
-            className="border-t border-line pt-16 mb-20 scroll-mt-8"
+            className="border-t border-night-line pt-16 mb-20 scroll-mt-8"
           >
-            <h2 className="text-4xl font-bold mb-10">Situations I help with</h2>
+            <h2 className="font-display font-extrabold text-[clamp(32px,4vw,44px)] leading-[1.05] tracking-[-0.03em] mb-10">
+              Situations I help with
+            </h2>
 
             <div>
               {situations.map((situation) => {
@@ -123,12 +128,12 @@ export default function WorkWithMe() {
                 return (
                   <div
                     key={situation.quote}
-                    className="mb-12 pb-8 border-b border-line last:mb-0 last:border-b-0 last:pb-0"
+                    className="mb-12 pb-8 border-b border-night-line last:mb-0 last:border-b-0 last:pb-0"
                   >
-                    <p className="text-2xl font-bold italic mb-3">
+                    <p className="font-display text-2xl font-semibold mb-3 text-bone">
                       &ldquo;{situation.quote}&rdquo;
                     </p>
-                    <p className="text-lg text-body mb-4">{situation.does}</p>
+                    <p className="text-lg text-bone-2 mb-4">{situation.does}</p>
                     <a href={`#${offer.id}`} className={linkClass}>
                       {offer.name} →
                     </a>
@@ -138,19 +143,19 @@ export default function WorkWithMe() {
             </div>
           </div>
 
-          <div className="border-t border-line pt-16 mb-20">
-            <h2 className="text-4xl font-bold mb-10">
+          <div className="border-t border-night-line pt-16 mb-20">
+            <h2 className="font-display font-extrabold text-[clamp(32px,4vw,44px)] leading-[1.05] tracking-[-0.03em] mb-10">
               Ways we can work together
             </h2>
 
-            <div className="mb-12 pb-8 border-b border-line">
+            <div className="mb-12 pb-8 border-b border-night-line">
               <h3
                 id="join-a-venture"
-                className="text-2xl font-bold mb-3 scroll-mt-8"
+                className="font-display font-semibold text-2xl mb-3 scroll-mt-8"
               >
                 1. Join one of my ventures
               </h3>
-              <p className="text-lg text-body">
+              <p className="text-lg text-bone-2">
                 I&apos;m building companies that create real impact: autonomous
                 customer acquisition, educational AI, and more. If you want to
                 join{" "}
@@ -180,14 +185,14 @@ export default function WorkWithMe() {
               </p>
             </div>
 
-            <div className="mb-12 pb-8 border-b border-line">
+            <div className="mb-12 pb-8 border-b border-night-line">
               <h3
                 id="build-something-new"
-                className="text-2xl font-bold mb-3 scroll-mt-8"
+                className="font-display font-semibold text-2xl mb-3 scroll-mt-8"
               >
                 2. Build something new together
               </h3>
-              <p className="text-lg text-body">
+              <p className="text-lg text-bone-2">
                 You have an idea, I have experience. Works best if you&apos;re a
                 founder, team, or operator ready to move fast - strategy, system
                 design, go-to-market, and execution.
@@ -197,11 +202,11 @@ export default function WorkWithMe() {
             <div>
               <h3
                 id="join-your-venture"
-                className="text-2xl font-bold mb-3 scroll-mt-8"
+                className="font-display font-semibold text-2xl mb-3 scroll-mt-8"
               >
                 3. I join your venture
               </h3>
-              <p className="text-lg text-body">
+              <p className="text-lg text-bone-2">
                 As advisor, consultant, or part-time strategic lead - from a
                 single deep meeting on one specific question, through a
                 multi-month engagement, to a long-term partnership (equity,
@@ -212,8 +217,10 @@ export default function WorkWithMe() {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-4">Terms</h2>
-            <p className="text-lg text-body">
+            <h2 className="font-display font-semibold text-[32px] leading-[1.15] tracking-[-0.02em] mb-4">
+              Terms
+            </h2>
+            <p className="text-lg text-bone-2">
               No fixed pricing - it depends on scope, stage, equity, and depth
               of engagement. What is fixed: every engagement starts with a
               defined scope, a decision point, and clear terms on the table.
@@ -223,10 +230,10 @@ export default function WorkWithMe() {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="font-display font-semibold text-[32px] leading-[1.15] tracking-[-0.02em] mb-4">
               If you need AI systems built
             </h2>
-            <p className="text-lg text-body">
+            <p className="text-lg text-bone-2">
               For companies that want AI strategy and execution - diagnosis
               first, then systems that deliver return - that&apos;s my agency
               with Raviv:{" "}
@@ -242,10 +249,12 @@ export default function WorkWithMe() {
             </p>
           </div>
 
-          <div className="border-t border-line pt-16 text-center">
-            <h2 className="text-3xl font-bold mb-6">Contact</h2>
-            <p className="text-lg text-body mb-2">Already in touch? WhatsApp is fastest.</p>
-            <p className="text-lg text-body mb-10">
+          <div className="border-t border-night-line pt-16">
+            <h2 className="font-display font-semibold text-[32px] leading-[1.15] tracking-[-0.02em] mb-6">
+              Contact
+            </h2>
+            <p className="text-lg text-bone-2 mb-2">Already in touch? WhatsApp is fastest.</p>
+            <p className="text-lg text-bone-2 mb-10">
               Formal:{" "}
               <TrackedLink
                 href="mailto:sharon@shineberg.com"
@@ -256,27 +265,27 @@ export default function WorkWithMe() {
                 sharon@shineberg.com
               </TrackedLink>
             </p>
-            <TrackedLink
-              href="/book"
-              className="inline-block px-8 py-3 mr-4 mb-4 border border-ink text-sm font-medium hover:bg-ink hover:text-paper transition"
-              event="contact_click"
-              params={{ method: "booking", location: "how_to_work" }}
-            >
-              Book a meeting
-            </TrackedLink>
-            <TrackedLink
-              href="/agent"
-              className="inline-block px-8 py-3 bg-ink text-paper text-sm font-medium hover:opacity-80 transition"
-              event="contact_click"
-              params={{ method: "agent_page", location: "how_to_work" }}
-            >
-              Talk to my agent
-            </TrackedLink>
+            <div className="flex flex-wrap gap-3">
+              <TrackedLink
+                href="/book"
+                className="inline-flex items-center justify-center min-h-[52px] px-7 rounded-full border border-night-edge text-bone font-medium hover:border-fog transition"
+                event="contact_click"
+                params={{ method: "booking", location: "how_to_work" }}
+              >
+                Book a meeting
+              </TrackedLink>
+              <TrackedLink
+                href="/agent"
+                className="inline-flex items-center justify-center min-h-[52px] px-7 rounded-full bg-lime text-night font-semibold hover:opacity-90 transition"
+                event="contact_click"
+                params={{ method: "agent_page", location: "how_to_work" }}
+              >
+                Talk to my agent
+              </TrackedLink>
+            </div>
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </NightShell>
   );
 }

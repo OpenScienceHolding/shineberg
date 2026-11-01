@@ -15,12 +15,13 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#F5F0E8",
-          color: "#111111",
+          background: "#0e0f0c",
+          color: "#eceae3",
           fontFamily: "Georgia, serif",
         }}
       >
-        <div style={{ fontSize: 28, letterSpacing: 6, color: "#727170", marginBottom: 40 }}>
+        <div style={{ width: 72, height: 8, background: "#d4ff3a", marginBottom: 36 }} />
+        <div style={{ fontSize: 28, letterSpacing: 6, color: "#a3a399", marginBottom: 40 }}>
           SHARON SHINEBERG
         </div>
         <div style={{ fontSize: 76, fontWeight: 700, lineHeight: 1.1 }}>
@@ -29,7 +30,7 @@ export default function OpengraphImage() {
         <div style={{ fontSize: 76, fontStyle: "italic", lineHeight: 1.1 }}>
           to ventures from day one.
         </div>
-        <div style={{ fontSize: 28, color: "#727170", marginTop: 48 }}>shineberg.com</div>
+        <div style={{ fontSize: 28, color: "#d4ff3a", marginTop: 48 }}>shineberg.com</div>
       </div>
     ),
     size

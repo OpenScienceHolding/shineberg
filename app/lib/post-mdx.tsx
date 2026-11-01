@@ -1,11 +1,19 @@
 import type { ReactNode } from "react";
 
 function H2({ children }: { children?: ReactNode }) {
-  return <h2 className="text-2xl font-bold text-ink mt-12">{children}</h2>;
+  return (
+    <h2 className="font-display font-semibold text-[28px] leading-[1.2] tracking-[-0.02em] text-bone mt-12 mb-4">
+      {children}
+    </h2>
+  );
 }
 
 function H3({ children }: { children?: ReactNode }) {
-  return <h3 className="text-xl font-bold text-ink mt-10">{children}</h3>;
+  return (
+    <h3 className="font-display font-semibold text-[22px] leading-[1.25] text-bone mt-10 mb-3">
+      {children}
+    </h3>
+  );
 }
 
 function Ul({ children }: { children?: ReactNode }) {
@@ -21,7 +29,7 @@ function A({ href, children }: { href?: string; children?: ReactNode }) {
   return (
     <a
       href={href}
-      className="underline"
+      className="text-bone underline decoration-night-edge underline-offset-4 hover:decoration-lime"
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
     >

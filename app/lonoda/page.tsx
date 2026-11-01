@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Footer from "../components/Footer";
+import { NightShell } from "../components/NightShell";
 import { TrackedLink } from "../components/TrackedLink";
 
 export default function Lonoda() {
@@ -39,85 +38,65 @@ export default function Lonoda() {
   ];
 
   return (
-    <div className="min-h-screen bg-paper text-ink font-serif">
-      <nav className="flex justify-between items-center gap-4 px-6 md:px-8 py-6 border-b border-ink">
-        <Link href="/" className="text-sm font-semibold hover:opacity-60">
-          Sharon Shineberg
-        </Link>
-        <div className="flex flex-wrap justify-end gap-x-4 gap-y-1 md:gap-8 text-sm whitespace-nowrap">
-          <Link href="/about" className="hover:opacity-60">
-            About
-          </Link>
-          <Link href="/strategy" className="hover:opacity-60">
-            Strategy
-          </Link>
-          <Link href="/how-to-work" className="hover:opacity-60">
-            Work With Me
-          </Link>
-          <Link href="/lonoda" className="hover:opacity-60">
+    <NightShell current="/lonoda">
+      <section className="max-w-[1240px] mx-auto px-6 py-20">
+        <div className="max-w-[760px]">
+          <h1 className="font-display font-extrabold text-[clamp(48px,6vw,76px)] leading-[0.98] tracking-[-0.03em] mb-6">
             lonoda
-          </Link>
-          <Link href="/blog" className="hover:opacity-60">
-            Blog
-          </Link>
-        </div>
-      </nav>
-
-      <section className="px-8 py-24 flex justify-center">
-        <div className="max-w-2xl">
-          <h1 className="text-6xl font-bold mb-6 text-center">lonoda</h1>
-          <p className="text-xl text-body mb-16 text-center leading-relaxed">
+          </h1>
+          <p className="text-xl text-bone-2 mb-16 leading-relaxed">
             Places where you dive into the unknown. Projects where outcomes are
             uncertain, problems are real, and learning happens in public.
           </p>
 
-          <div className="space-y-8">
+          <div className="grid gap-4">
             {projects.map((project, idx) => (
               <div
                 key={idx}
-                className="pb-8 border-b border-line last:border-b-0"
+                className="bg-night-card border border-night-line rounded-[20px] p-8 flex flex-col gap-4"
               >
-                <div className="flex flex-col items-center gap-4 mb-4">
-                  <span className="text-4xl">{project.emoji}</span>
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold">{project.title}</h3>
-                    <p className="text-sm text-muted mt-1">{project.status}</p>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-2xl" aria-hidden="true">
+                      {project.emoji}
+                    </span>
+                    <h3 className="font-display font-semibold text-[28px] leading-[1.15]">
+                      {project.title}
+                    </h3>
                   </div>
+                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-lime">
+                    {project.status}
+                  </p>
                 </div>
-                <p className="text-lg text-body text-center mb-4">
-                  {project.description}
-                </p>
-                <div className="text-center">
-                  <a
-                    href={project.link}
-                    target={
-                      project.link.startsWith("http") ? "_blank" : undefined
-                    }
-                    rel={
-                      project.link.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className="text-ink font-medium hover:opacity-60"
-                  >
-                    Visit →
-                  </a>
-                </div>
+                <p className="text-base text-bone-2">{project.description}</p>
+                <a
+                  href={project.link}
+                  target={
+                    project.link.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    project.link.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="text-bone font-medium border-b border-night-edge self-start hover:border-lime"
+                >
+                  Visit →
+                </a>
               </div>
             ))}
           </div>
 
-          {/* Social Links */}
-          <div className="mt-20 pt-8 border-t border-line">
-            <h2 className="text-2xl font-bold mb-8 text-center">
+          <div className="mt-20 pt-8 border-t border-night-line">
+            <h2 className="font-display font-semibold text-[32px] leading-[1.15] tracking-[-0.02em] mb-8">
               Stay Connected
             </h2>
-            <div className="flex justify-center gap-8">
+            <div className="flex flex-wrap gap-8">
               <a
                 href="https://www.linkedin.com/in/sharonshineberg/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-ink font-medium hover:opacity-60"
+                className="text-bone font-medium border-b border-night-edge hover:border-lime"
               >
                 LinkedIn
               </a>
@@ -125,13 +104,13 @@ export default function Lonoda() {
                 href="https://www.facebook.com/shinebergsharon"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-ink font-medium hover:opacity-60"
+                className="text-bone font-medium border-b border-night-edge hover:border-lime"
               >
                 Facebook
               </a>
               <TrackedLink
                 href="mailto:sharon@shineberg.com"
-                className="text-ink font-medium hover:opacity-60"
+                className="text-bone font-medium border-b border-night-edge hover:border-lime"
                 event="contact_click"
                 params={{ method: "email", location: "lonoda" }}
               >
@@ -141,8 +120,6 @@ export default function Lonoda() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </NightShell>
   );
 }
