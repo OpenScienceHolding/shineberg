@@ -90,13 +90,36 @@
   .theme-night h1,
   .theme-night h2,
   .theme-night h3,
+  .theme-night h4,
   .theme-night p,
   .theme-night ol,
   .theme-night ul,
   .theme-night li,
   .theme-night blockquote,
-  .theme-night dd {
+  .theme-night dd,
+  .theme-night pre {
     margin: 0;
     font-family: inherit;
+  }
+
+  /* Long-form pages opt back into readable paragraph rhythm. */
+  .theme-night .night-copy p,
+  .theme-night .night-copy li,
+  .theme-night .night-copy blockquote {
+    color: var(--color-bone-2);
+  }
+
+  .theme-night .night-copy p {
+    margin-bottom: 1.15rem;
+  }
+
+  .theme-night .night-copy strong {
+    color: var(--color-bone);
+    font-weight: 600;
+  }
+
+  .theme-night .night-copy a {
+    color: var(--color-bone);
+    text-underline-offset: 3px;
   }
 }

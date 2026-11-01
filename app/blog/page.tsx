@@ -1,7 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
+import { NightShell } from "../components/NightShell";
 import { formatPostDate, getPublishedPosts } from "../lib/posts";
 import { SITE_URL } from "../lib/site";
 
@@ -55,43 +54,48 @@ export default function Blog() {
   ];
 
   return (
-    <div className="min-h-screen bg-paper text-ink font-serif">
-      <Nav />
-
-      <section className="px-8 py-24 max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-4">Blog</h1>
-        <p className="text-lg text-body mb-16">
+    <NightShell current="/blog">
+      <section className="max-w-[1240px] mx-auto px-6 py-20">
+        <div className="max-w-[820px]">
+        <h1 className="font-display font-extrabold text-[clamp(48px,6vw,76px)] leading-[0.98] tracking-[-0.03em] mb-4">
+          Blog
+        </h1>
+        <p className="text-lg text-bone-2 mb-16">
           Thoughts on building, innovation, agents, and the projects in lonoda.
         </p>
 
-        <div className="space-y-12">
+        <div className="flex flex-col gap-4">
           {cards.map((post) => (
-            <div
+            <article
               key={post.href}
-              className="pb-12 border-b border-line last:border-b-0"
+              className="bg-night-card border border-night-line rounded-[20px] p-8 flex flex-col gap-3"
             >
-              <div className="mb-3">
+              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                 {post.category ? (
-                  <span className="text-xs uppercase tracking-wide text-muted">
+                  <span className="font-mono text-xs uppercase tracking-[0.12em] text-lime">
                     {post.category}
                   </span>
                 ) : null}
-                <p className="text-xs text-muted mt-1">{post.date}</p>
+                <p className="font-mono text-xs text-fog">{post.date}</p>
               </div>
-              <h2 className="text-2xl font-bold mb-3">{post.title}</h2>
-              <p className="text-lg text-body mb-4">{post.excerpt}</p>
+              <h2
+                dir="auto"
+                className="font-display font-semibold text-[28px] leading-[1.15] tracking-[-0.02em]"
+              >
+                {post.title}
+              </h2>
+              <p className="text-base text-bone-2">{post.excerpt}</p>
               <Link
                 href={post.href}
-                className="text-ink underline hover:opacity-60"
+                className="text-bone font-medium border-b border-night-edge self-start hover:border-lime"
               >
                 Read article →
               </Link>
-            </div>
+            </article>
           ))}
         </div>
+        </div>
       </section>
-
-      <Footer />
-    </div>
+    </NightShell>
   );
 }

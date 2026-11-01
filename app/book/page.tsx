@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import { NightShell } from "../components/NightShell";
 import { BookingPicker } from "./BookingPicker";
 
 const description =
@@ -18,15 +17,13 @@ export const metadata: Metadata = {
 
 export default function Book() {
   return (
-    <div className="min-h-screen bg-paper text-ink font-serif">
-      <Nav />
-
-      <section className="px-6 md:px-8 py-24 flex justify-center">
-        <div className="max-w-4xl w-full">
-          <h1 className="text-5xl md:text-6xl font-bold mb-8 text-center">
+    <NightShell current="/book">
+      <section className="max-w-[1240px] mx-auto px-6 py-20">
+        <div className="max-w-[960px] w-full">
+          <h1 className="font-display font-extrabold text-[clamp(48px,6vw,76px)] leading-[0.98] tracking-[-0.03em] mb-8">
             Book a Meeting
           </h1>
-          <p className="text-xl text-body text-center mb-16 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-bone-2 mb-16 leading-relaxed max-w-[640px]">
             A clear message beats a meeting. If we meet, it is to decide
             something - so come with the purpose in one line. Times are shown in
             your time zone.
@@ -35,8 +32,6 @@ export default function Book() {
           <BookingPicker />
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </NightShell>
   );
 }
