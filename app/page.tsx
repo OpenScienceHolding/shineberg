@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NightHeader } from "./components/NightHeader";
 import { TrackedLink } from "./components/TrackedLink";
 import { AGENT_EMAIL, agentMailto } from "./lib/contact";
 
@@ -111,49 +112,7 @@ function External({ size = 16 }: { size?: number }) {
 export default function Home() {
   return (
     <div className="theme-night min-h-screen bg-night text-bone font-body text-[17px] leading-[1.6]">
-      {/* Navigation */}
-      <header className="border-b border-night-line">
-        <nav
-          aria-label="Main"
-          className="max-w-[1240px] mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-4"
-        >
-          <Link
-            href="/"
-            className="font-display font-extrabold text-xl tracking-[-0.02em]"
-          >
-            shineberg<span className="text-lime">.</span>
-          </Link>
-          <div className="flex flex-wrap items-center gap-x-7 gap-y-2 text-[15px] text-fog">
-            <Link href="/about" className="hover:text-bone">
-              About
-            </Link>
-            <Link href="/how-to-work" className="hover:text-bone">
-              Work with me
-            </Link>
-            <Link href="/lonoda" className="hover:text-bone">
-              lonoda
-            </Link>
-            <Link href="/blog" className="hover:text-bone">
-              Blog
-            </Link>
-            <Link href="/book" className="hover:text-bone">
-              Book
-            </Link>
-            <TrackedLink
-              href="/agent"
-              className="inline-flex items-center gap-2 min-h-11 px-[18px] rounded-full border border-night-edge text-bone font-medium transition hover:border-fog"
-              event="contact_click"
-              params={{ method: "agent_page", location: "home_nav" }}
-            >
-              <span
-                aria-hidden="true"
-                className="w-2 h-2 rounded-full bg-lime"
-              />
-              Talk to my agent
-            </TrackedLink>
-          </div>
-        </nav>
-      </header>
+      <NightHeader />
 
       {/* Hero */}
       <section className="max-w-[1240px] mx-auto px-6 pt-24 pb-[88px] flex flex-wrap items-end gap-14">
@@ -359,6 +318,32 @@ export default function Home() {
               </dl>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="strategy-h"
+        className="border-t border-night-line"
+      >
+        <div className="max-w-[1240px] mx-auto px-6 py-24 flex flex-wrap items-end justify-between gap-10">
+          <div className="flex-[999_1_560px] min-w-0 max-w-[760px] flex flex-col gap-5">
+            <h2 id="strategy-h" className={sectionTitle}>
+              Strategy consulting
+            </h2>
+            <p className="max-w-[640px] text-lg leading-[1.55] text-bone-2">
+              Facing a hard call - a new idea, a stalled venture, or a market
+              shifting under you? Bring one concrete question. You&apos;ll get
+              an honest read and a decision on the table, not a deck.
+            </p>
+          </div>
+          <TrackedLink
+            href="/strategy"
+            className={textLink}
+            event="home_strategy"
+          >
+            Strategy consulting
+            <Arrow size={16} />
+          </TrackedLink>
         </div>
       </section>
 

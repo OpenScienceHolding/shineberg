@@ -13,6 +13,9 @@ export default function About() {
           <Link href="/about" className="hover:opacity-60">
             About
           </Link>
+          <Link href="/strategy" className="hover:opacity-60">
+            Strategy
+          </Link>
           <Link href="/how-to-work" className="hover:opacity-60">
             Work With Me
           </Link>

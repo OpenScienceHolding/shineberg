@@ -31,6 +31,7 @@ The fastest way to reach Sharon is through his agent (email: ec2tee@mail.instinc
 
 - [Home](${SITE_URL}/): who Sharon is and what he is building
 - [Work With Me](${SITE_URL}/how-to-work): how Sharon communicates, decides and works, the ways to work together, and terms
+- [Strategy consulting](${SITE_URL}/strategy): strategy consulting for founders and executives facing a hard call. One concrete question, an honest read, and a decision on the table
 - [Talk to my agent](${SITE_URL}/agent): contact Sharon's agent or connect your agent to his
 - [Guide (Hebrew)](${SITE_URL}/guide): open step-by-step guide to connecting Instinct to WhatsApp and an Obsidian vault
 - [About](${SITE_URL}/about): background
