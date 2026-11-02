@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { NightShell } from "../components/NightShell";
+import { blogIndexJsonLd, jsonLdScript } from "../lib/jsonld";
 import { formatPostDate, getPublishedPosts } from "../lib/posts";
 import { SITE_URL } from "../lib/site";
 
@@ -28,11 +29,13 @@ export async function generateMetadata(
       description: blogDescription,
       images: parentMeta.twitter?.images,
     },
+    alternates: { canonical: `${SITE_URL}/blog` },
   };
 }
 
 export default function Blog() {
-  const posts = getPublishedPosts().map((post) => ({
+  const published = getPublishedPosts();
+  const posts = published.map((post) => ({
     href: `/blog/${post.slug}`,
     title: post.title,
     excerpt: post.description,
@@ -55,6 +58,12 @@ export default function Blog() {
 
   return (
     <NightShell current="/blog">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(blogIndexJsonLd(published)),
+        }}
+      />
       <section className="max-w-[1240px] mx-auto px-6 py-20">
         <div className="max-w-[820px]">
         <h1 className="font-display font-extrabold text-[clamp(48px,6vw,76px)] leading-[0.98] tracking-[-0.03em] mb-4">

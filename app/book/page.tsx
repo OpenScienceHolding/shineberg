@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NightShell } from "../components/NightShell";
+import { SessionSteps } from "../components/SessionSteps";
 import { BookingPicker } from "./BookingPicker";
 
 const description =
@@ -28,6 +29,10 @@ export default function Book() {
             something - so come with the purpose in one line. Times are shown in
             your time zone.
           </p>
+
+          <div className="mb-16">
+            <SessionSteps />
+          </div>
 
           <BookingPicker />
         </div>
