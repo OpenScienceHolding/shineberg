@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { NightFooter } from "./components/NightFooter";
 import { NightHeader } from "./components/NightHeader";
 import { TrackedLink } from "./components/TrackedLink";
 import { AGENT_EMAIL, agentMailto } from "./lib/contact";
+import { homeJsonLd, jsonLdScript } from "./lib/jsonld";
+import { SITE_URL } from "./lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: SITE_URL },
+};
 
 const eyebrow = "font-mono text-[13px] uppercase tracking-[0.12em] text-fog";
 const sectionTitle =
@@ -113,6 +120,10 @@ function External({ size = 16 }: { size?: number }) {
 export default function Home() {
   return (
     <div className="theme-night min-h-screen bg-night text-bone font-body text-[17px] leading-[1.6]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(homeJsonLd) }}
+      />
       <NightHeader />
 
       {/* Hero */}

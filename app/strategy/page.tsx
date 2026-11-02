@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { NightFooter } from "../components/NightFooter";
 import { NightHeader } from "../components/NightHeader";
+import { SessionSteps } from "../components/SessionSteps";
 import { TrackedLink } from "../components/TrackedLink";
 import {
   audiences,
@@ -194,6 +196,7 @@ export default function Strategy() {
               </li>
             ))}
           </ol>
+          <SessionSteps />
           <p className="text-lg text-bone-2">
             Every format starts the same way: scope before work.{" "}
             <TrackedLink
@@ -251,6 +254,33 @@ export default function Strategy() {
             <p className="text-lg text-bone-2">
               The work is personal, so I don&apos;t publish client stories.
             </p>
+            <div className="bg-night-card border border-night-line rounded-[20px] p-8 flex flex-col gap-4">
+              <h3 className="font-display font-semibold text-[26px] leading-[1.15]">
+                How to check me out
+              </h3>
+              <p className="text-lg text-bone-2">
+                I can introduce you to someone I&apos;ve worked with, after we
+                talk and only if they agree. Happy to sign an NDA before you
+                share anything. See the ventures I founded (Mela, Feezback,
+                lezel) and read how I think on the{" "}
+                <Link
+                  href="/blog"
+                  className="text-bone border-b border-night-edge hover:border-lime"
+                >
+                  blog
+                </Link>{" "}
+                and on{" "}
+                <a
+                  href="https://thelastfounder.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-bone border-b border-night-edge hover:border-lime"
+                >
+                  The Last Founder
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </div>
       </section>

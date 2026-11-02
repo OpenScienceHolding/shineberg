@@ -3,9 +3,9 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { NightShell } from "../../components/NightShell";
+import { blogPostPageJsonLd, jsonLdScript, postUrl } from "../../lib/jsonld";
 import { postMdxComponents } from "../../lib/post-mdx";
 import { formatPostDate, getPublishedPost, getPublishedPosts } from "../../lib/posts";
-import { SITE_URL } from "../../lib/site";
 
 export const dynamicParams = false;
 
@@ -23,7 +23,7 @@ export async function generateMetadata(
 
   const parentMeta = await parent;
   const title = `${post.title} | Sharon Shineberg`;
-  const url = `${SITE_URL}/blog/${post.slug}`;
+  const url = postUrl(post);
   const images = post.ogImage
     ? [{ url: post.ogImage }]
     : parentMeta.openGraph?.images;
@@ -45,6 +45,7 @@ export async function generateMetadata(
       description: post.description,
       images: post.ogImage ? [post.ogImage] : parentMeta.twitter?.images,
     },
+    alternates: { canonical: url },
   };
 }
 
@@ -59,6 +60,12 @@ export default async function BlogPost({
 
   return (
     <NightShell current="/blog">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(blogPostPageJsonLd(post)),
+        }}
+      />
       <article className="max-w-[1240px] mx-auto px-6 py-20">
         <div className="max-w-[760px]">
         <div className="mb-12 flex flex-col gap-4">
