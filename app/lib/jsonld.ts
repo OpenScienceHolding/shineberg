@@ -1,4 +1,4 @@
-import type { Post } from "./posts";
+import { faqsFromPost, type Post } from "./posts";
 import { SITE_URL } from "./site";
 import { SHARON_ID } from "./work-with-me";
 
@@ -72,6 +72,26 @@ export function blogIndexJsonLd(posts: Post[]) {
       "Thoughts on building, innovation, agents, and the projects in lonoda.",
     publisher: { "@id": SHARON_ID },
     blogPost: posts.map(blogPostingJsonLd),
+  };
+}
+
+export function faqPageJsonLd(post: Post) {
+  const faqs = faqsFromPost(post.content);
+  if (faqs.length === 0) return null;
+  const url = postUrl(post);
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 }
 

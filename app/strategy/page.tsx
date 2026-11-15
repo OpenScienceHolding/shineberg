@@ -193,6 +193,14 @@ export default function Strategy() {
                   {format.title}
                 </h3>
                 <p className="text-base text-bone-2">{format.body}</p>
+                {format.link ? (
+                  <Link
+                    href={format.link.href}
+                    className="text-sm font-medium text-bone border-b border-night-edge self-start hover:border-lime"
+                  >
+                    {format.link.label}
+                  </Link>
+                ) : null}
               </li>
             ))}
           </ol>

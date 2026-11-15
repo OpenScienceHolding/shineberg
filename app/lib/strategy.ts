@@ -32,7 +32,11 @@ export const questions = [
   "Where does AI change our market, and where is it just noise?",
 ];
 
-export const formats = [
+export const formats: {
+  title: string;
+  body: string;
+  link?: { href: string; label: string };
+}[] = [
   {
     title: "1. One deep session.",
     body: "A 45-minute working session on one concrete question. Come with the purpose in one line. You leave with an honest read and a next step.",
@@ -44,6 +48,10 @@ export const formats = [
   {
     title: "3. Ongoing advisor or part-time strategic lead.",
     body: "I hold strategy and go-to-market with you over time - advisory, equity, or a combination.",
+    link: {
+      href: "/blog/advisor-consultant-or-strategic-lead",
+      label: "Advisor, consultant or strategic lead?",
+    },
   },
 ];
 

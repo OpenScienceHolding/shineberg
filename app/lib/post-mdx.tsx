@@ -38,6 +38,32 @@ function A({ href, children }: { href?: string; children?: ReactNode }) {
   );
 }
 
+function Table({ children }: { children?: ReactNode }) {
+  return (
+    <div className="overflow-x-auto my-8">
+      <table className="w-full text-left text-base border-collapse min-w-[640px]">
+        {children}
+      </table>
+    </div>
+  );
+}
+
+function Th({ children }: { children?: ReactNode }) {
+  return (
+    <th className="py-3 pe-4 text-start align-top font-semibold text-bone border-b border-night-edge">
+      {children}
+    </th>
+  );
+}
+
+function Td({ children }: { children?: ReactNode }) {
+  return (
+    <td className="py-3 pe-4 align-top text-bone-2 border-b border-night-line">
+      {children}
+    </td>
+  );
+}
+
 function Wrapper({ children }: { children?: ReactNode }) {
   return <>{children}</>;
 }
@@ -48,5 +74,8 @@ export const postMdxComponents = {
   ul: Ul,
   ol: Ol,
   a: A,
+  table: Table,
+  th: Th,
+  td: Td,
   wrapper: Wrapper,
 };
