@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { NightShell } from "../components/NightShell";
+import { PublishedLine } from "../components/PublishedLine";
+import { guideContentDates } from "../lib/content-dates";
 
 export const metadata: Metadata = {
   title:
@@ -111,6 +113,7 @@ const systems: [string, string, string][] = [
 ];
 
 export default function Guide() {
+  const { published, updated } = guideContentDates();
   return (
     <NightShell current="/guide">
       <article
@@ -132,6 +135,13 @@ export default function Guide() {
         <h1 className="font-display font-extrabold text-[clamp(36px,5vw,60px)] leading-[1.05] tracking-[-0.03em] text-bone mb-4">
           איך לחבר את Instinct ל-WhatsApp ולכספת Obsidian
         </h1>
+        <div dir="ltr" className="text-left mb-4">
+          <PublishedLine
+            published={published}
+            updated={updated}
+            className="font-mono text-sm text-fog"
+          />
+        </div>
         <p className="text-lg text-fog mb-12">מדריך פתוח להקמה עצמית</p>
 
         <H2>1. מה זה Instinct</H2>

@@ -1,8 +1,10 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { NightShell } from "../components/NightShell";
+import { PublishedLine } from "../components/PublishedLine";
+import { guideContentDates } from "../lib/content-dates";
 import { blogIndexJsonLd, jsonLdScript } from "../lib/jsonld";
-import { formatPostDate, getPublishedPosts } from "../lib/posts";
+import { getPublishedPosts } from "../lib/posts";
 import { SITE_URL } from "../lib/site";
 
 const blogTitle = "Blog | Sharon Shineberg";
@@ -35,11 +37,13 @@ export async function generateMetadata(
 
 export default function Blog() {
   const published = getPublishedPosts();
+  const guideDates = guideContentDates();
   const posts = published.map((post) => ({
     href: `/blog/${post.slug}`,
     title: post.title,
     excerpt: post.description,
-    date: formatPostDate(post.date),
+    published: post.date,
+    updated: post.updated,
     category: post.category,
   }));
 
@@ -51,7 +55,8 @@ export default function Blog() {
       title: "המדריך: איך לחבר את Instinct ל-WhatsApp ולכספת Obsidian",
       excerpt:
         "An open, step-by-step guide (in Hebrew) to connecting Instinct to WhatsApp, Apple Reminders and an Obsidian vault - and working alongside Claude. Prompts included.",
-      date: "September 2026",
+      published: guideDates.published,
+      updated: guideDates.updated,
       category: "Guide",
     },
   ];
@@ -85,7 +90,10 @@ export default function Blog() {
                     {post.category}
                   </span>
                 ) : null}
-                <p className="font-mono text-xs text-fog">{post.date}</p>
+                <PublishedLine
+                  published={post.published}
+                  updated={post.updated}
+                />
               </div>
               <h2
                 dir="auto"

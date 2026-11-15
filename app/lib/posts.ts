@@ -16,8 +16,15 @@ export type PostLink = {
 export type Post = {
   title: string;
   description: string;
-  /** Calendar date, YYYY-MM-DD. Shown as "Month YYYY". */
+  /** Optional shorter title for the document head and social cards. */
+  metaTitle?: string;
+  /** Calendar date, YYYY-MM-DD. The publish date. */
   date: string;
+  /**
+   * Optional later edit date, YYYY-MM-DD. Omit it when the post has not been
+   * updated since `date`. Do not set it unless the content actually changed.
+   */
+  updated?: string;
   slug: string;
   ogImage?: string;
   status: PostStatus;
@@ -118,7 +125,12 @@ function parsePost(file: string): Post {
   return {
     title: requiredString(file, "title", data.title),
     description: requiredString(file, "description", data.description),
+    metaTitle: optionalString(file, "metaTitle", data.metaTitle),
     date: parseDate(file, data.date),
+    updated:
+      data.updated == null || data.updated === ""
+        ? undefined
+        : parseDate(file, data.updated),
     slug,
     ogImage: optionalString(file, "ogImage", data.ogImage),
     status,
@@ -158,6 +170,29 @@ export function getPublishedPosts(): Post[] {
 
 export function getPublishedPost(slug: string): Post | undefined {
   return getPublishedPosts().find((post) => post.slug === slug);
+}
+
+export type PostFaq = {
+  question: string;
+  answer: string;
+};
+
+/** Questions under a final "## FAQ" heading, each "### Question" plus its answer. */
+export function faqsFromPost(content: string): PostFaq[] {
+  const split = content.split(/^## FAQ\s*$/m);
+  if (split.length < 2) return [];
+  const section = split.slice(1).join("\n");
+  return section
+    .split(/^### /m)
+    .slice(1)
+    .map((chunk) => {
+      const [questionLine, ...rest] = chunk.split("\n");
+      return {
+        question: questionLine.trim(),
+        answer: rest.join(" ").replace(/\s+/g, " ").trim(),
+      };
+    })
+    .filter((item) => item.question !== "" && item.answer !== "");
 }
 
 export function formatPostDate(isoDate: string): string {

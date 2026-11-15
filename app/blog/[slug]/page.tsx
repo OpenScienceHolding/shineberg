@@ -3,9 +3,10 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { NightShell } from "../../components/NightShell";
-import { blogPostPageJsonLd, jsonLdScript, postUrl } from "../../lib/jsonld";
+import { PublishedLine } from "../../components/PublishedLine";
+import { blogPostPageJsonLd, faqPageJsonLd, jsonLdScript, postUrl } from "../../lib/jsonld";
 import { postMdxComponents } from "../../lib/post-mdx";
-import { formatPostDate, getPublishedPost, getPublishedPosts } from "../../lib/posts";
+import { getPublishedPost, getPublishedPosts } from "../../lib/posts";
 
 export const dynamicParams = false;
 
@@ -22,7 +23,7 @@ export async function generateMetadata(
   if (!post) return {};
 
   const parentMeta = await parent;
-  const title = `${post.title} | Sharon Shineberg`;
+  const title = `${post.metaTitle ?? post.title} | Sharon Shineberg`;
   const url = postUrl(post);
   const images = post.ogImage
     ? [{ url: post.ogImage }]
@@ -57,6 +58,7 @@ export default async function BlogPost({
   const { slug } = await params;
   const post = getPublishedPost(slug);
   if (!post) notFound();
+  const faqJsonLd = faqPageJsonLd(post);
 
   return (
     <NightShell current="/blog">
@@ -66,6 +68,12 @@ export default async function BlogPost({
           __html: jsonLdScript(blogPostPageJsonLd(post)),
         }}
       />
+      {faqJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(faqJsonLd) }}
+        />
+      ) : null}
       <article className="max-w-[1240px] mx-auto px-6 py-20">
         <div className="max-w-[760px]">
         <div className="mb-12 flex flex-col gap-4">
@@ -77,8 +85,12 @@ export default async function BlogPost({
           <h1 className="font-display font-extrabold text-[clamp(40px,5vw,64px)] leading-[1.02] tracking-[-0.03em]">
             {post.title}
           </h1>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-fog">
-            <span>{formatPostDate(post.date)}</span>
+          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-fog">
+            <PublishedLine
+              published={post.date}
+              updated={post.updated}
+              className="font-mono text-sm text-fog"
+            />
             {post.link ? (
               <>
                 <span>•</span>
