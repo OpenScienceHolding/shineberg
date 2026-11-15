@@ -3,9 +3,10 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { NightShell } from "../../components/NightShell";
+import { PublishedLine } from "../../components/PublishedLine";
 import { blogPostPageJsonLd, jsonLdScript, postUrl } from "../../lib/jsonld";
 import { postMdxComponents } from "../../lib/post-mdx";
-import { formatPostDate, getPublishedPost, getPublishedPosts } from "../../lib/posts";
+import { getPublishedPost, getPublishedPosts } from "../../lib/posts";
 
 export const dynamicParams = false;
 
@@ -77,8 +78,12 @@ export default async function BlogPost({
           <h1 className="font-display font-extrabold text-[clamp(40px,5vw,64px)] leading-[1.02] tracking-[-0.03em]">
             {post.title}
           </h1>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-fog">
-            <span>{formatPostDate(post.date)}</span>
+          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-fog">
+            <PublishedLine
+              published={post.date}
+              updated={post.updated}
+              className="font-mono text-sm text-fog"
+            />
             {post.link ? (
               <>
                 <span>•</span>

@@ -16,8 +16,13 @@ export type PostLink = {
 export type Post = {
   title: string;
   description: string;
-  /** Calendar date, YYYY-MM-DD. Shown as "Month YYYY". */
+  /** Calendar date, YYYY-MM-DD. The publish date. */
   date: string;
+  /**
+   * Optional later edit date, YYYY-MM-DD. Omit it when the post has not been
+   * updated since `date`. Do not set it unless the content actually changed.
+   */
+  updated?: string;
   slug: string;
   ogImage?: string;
   status: PostStatus;
@@ -119,6 +124,10 @@ function parsePost(file: string): Post {
     title: requiredString(file, "title", data.title),
     description: requiredString(file, "description", data.description),
     date: parseDate(file, data.date),
+    updated:
+      data.updated == null || data.updated === ""
+        ? undefined
+        : parseDate(file, data.updated),
     slug,
     ogImage: optionalString(file, "ogImage", data.ogImage),
     status,

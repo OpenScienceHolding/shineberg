@@ -55,6 +55,7 @@ export function blogPostingJsonLd(post: Post) {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.updated ?? post.date,
     ...(image ? { image } : {}),
     author: { "@id": SHARON_ID },
   };
